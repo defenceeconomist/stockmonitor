@@ -1,0 +1,28 @@
+project:
+  type: website
+  output-dir: _site
+  pre-render: python3 scripts/build.py
+  resources:
+    - assets/
+    - data/listings.csv
+    - data/source/mod-tic-2025.ods
+website:
+  title: MOD Supplier Monitor
+  site-url: https://defenceeconomist.github.io/stockmonitor/
+  description: Explore MOD supplier spending, share prices and the news alongside market movements.
+  navbar: false
+  search: false
+format:
+  html:
+    theme: none
+    css: assets/styles.css
+    toc: false
+    page-layout: full
+    anchor-sections: false
+    include-in-header:
+      text: |
+        <meta name="theme-color" content="#122c3b">
+    include-after-body:
+      text: |
+        <script src="assets/plotly.min.js"></script>
+        <script src="assets/app.js"></script>

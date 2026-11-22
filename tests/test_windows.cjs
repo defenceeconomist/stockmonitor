@@ -1,0 +1,15 @@
+const fs = require('node:fs');
+const vm = require('node:vm');
+const assert = require('node:assert/strict');
+const source = fs.readFileSync('assets/app.js','utf8').replace(/init\(\);\s*$/, '');
+const scope = vm.createContext({document:{getElementById:()=>({})},console});
+vm.runInContext(source,scope);
+assert.equal(scope.startDate('2026-03-31','1M'),'2026-02-28');
+assert.equal(scope.startDate('2024-02-29','1Y'),'2023-02-28');
+assert.equal(scope.startDate('2026-11-20','YTD'),'2025-12-31');
+assert.equal(scope.startDate('2026-11-20','1W'),'2026-11-13');
+const company={market:{bars:[{date:'2026-10-19',adjusted:100},{date:'2026-10-21',adjusted:105},{date:'2026-11-20',adjusted:110}]}};
+assert.equal(scope.windowBars(company,'1M')[0].date,'2026-10-19');
+assert.ok(Math.abs(scope.performance(company,'1M')-10)<1e-9);
+assert.equal(scope.performance({market:{bars:[]}},'1M'),null);
+console.log('7 calendar-window and adjusted-performance checks passed.');
