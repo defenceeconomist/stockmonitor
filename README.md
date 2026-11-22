@@ -7,6 +7,7 @@ A static **Quarto + Python** website connecting MOD supplier spending to share-p
 - Interactive treemap: area represents 2024/25 MOD payments; colour represents adjusted share-price performance over a selected window.
 - Company price explorer: 1W, 1M, 3M, 6M, YTD, 1Y and 5Y, closing/adjusted prices or rebased to 100.
 - Company news: up to 30 recent headlines per quoted company, markers on the daily chart, and a paired session's adjusted close-to-close change. This is a timing association, **not causal attribution**.
+- **Latest-week explanations for all 78 companies**: fixed seven-day window, weekly adjusted return, largest daily move, reported catalysts or clearly labelled news context, and up to three supporting reports. Companies without a direct quote or sufficient evidence are explicitly flagged.
 - Searchable supplier directory and complete source/methodology notes.
 - Responsive layout with keyboard-accessible company selection and directory.
 
@@ -23,6 +24,14 @@ Prices retain native listing currencies (GBp = pence); there is no FX conversion
 ### News session pairing
 
 Publication timestamps are converted to the listing's exchange timezone. Before the normal close, a story maps to that date's session; at/after close and on non-trading dates it maps to the next observed completed session. The paired move is adjusted close / preceding adjusted close − 1. Stories with no subsequent completed session remain pending. Normal close is derived from the provider's current regular trading schedule; historical early closes are not modelled. Intraday sequencing, other stories, macro events, earnings and overnight gaps can all affect the same daily return. Name searches can include irrelevant stories; the feed is not comprehensive. Markers show only stories in the visible chart window.
+
+### Weekly explanations
+
+`scripts/weekly_summary.py` produces deterministic briefings for **only the latest completed week**, independent of the chart's selected horizon. The end is the latest completed session in the snapshot; the start is seven calendar days earlier. Price baselines use the last observed session on/before the start. Each briefing includes its exact observed price dates and the largest absolute daily adjusted move.
+
+The updater fetches a dedicated date-bounded news feed per quoted company, separately from the capped 90-day feed. Evidence must have a mapped session in the measured window and a publication timestamp after the baseline session's normal close and at/before the final close. Stories after the final close cannot explain that week's return. The summaries use company-name checks, quote-page/speculative-content filters, headline theme rules, source ranking and headline deduplication. They do not read article bodies or call an AI API. A directional, explicitly event-linked headline can support a **reported catalyst**; other concrete stories supply **news context**, not causal findings. Every supporting headline links to its source. Missing coverage yields “No clear explanation found”. All unquoted entities also receive an explicit no-quote briefing. Source matching can be imperfect, and no market/sector return attribution is performed.
+
+Briefings are available in the all-company weekly overview and alongside the selected company's chart. They regenerate on every data refresh and are stored in the snapshot; older weekly prose is not reused when the window advances. Failed weekly-news requests fall back to the general news feed with a visible coverage caveat. Add or adjust rules with their edge-case tests as new patterns appear.
 
 ## Run locally
 

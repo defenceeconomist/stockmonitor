@@ -13,6 +13,7 @@ import xml.etree.ElementTree as ET
 import zipfile
 from zoneinfo import ZoneInfo
 import requests
+from weekly_summary import add_weekly_summaries
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_URL = 'https://assets.publishing.service.gov.uk/media/69aff1f1d620c14fa183ef3e/Data_tables_relating_to_MOD_trade__industry_and_contracts_2025.ods'
@@ -96,8 +97,12 @@ def fetch_market(ticker):
             'fetched_at': datetime.now(timezone.utc).isoformat(), 'bars': bars, 'status': 'ok'}
 
 
-def fetch_news(company):
-    query = quote(f'"{company}" (shares OR stock OR earnings OR contract) when:90d')
+def fetch_news(company, week_end=None):
+    window = 'when:90d'
+    if week_end:
+        end = datetime.fromisoformat(week_end).date()
+        window = f'after:{end-timedelta(days=8)} before:{end+timedelta(days=1)}'
+    query = quote(f'"{company}" (shares OR stock OR earnings OR contract) {window}')
     url = f'https://news.google.com/rss/search?q={query}&hl=en-GB&gl=GB&ceid=GB:en'
     root = ET.fromstring(get(url).content)
     stories, seen = [], set()
@@ -155,6 +160,7 @@ def main():
     def enrich(c):
         listing = listings.get(c['name'])
         c['ticker'] = listing['ticker'] if listing else None
+        c['news_name'] = listing['news_name'] if listing else c['name']
         if not listing:
             c['market'] = {'status': 'unmapped', 'bars': []}
             c['news'] = []
@@ -179,6 +185,23 @@ def main():
 
     with ThreadPoolExecutor(max_workers=4) as pool:
         enriched = list(pool.map(enrich, companies))
+    week_end = max(c['market']['bars'][-1]['date'] for c in enriched if c['market']['bars'])
+
+    def weekly_news(c):
+        if not c['ticker']:
+            return c
+        try:
+            c['weekly_news'] = map_news(fetch_news(c['news_name'], week_end), c['market'])
+            c['weekly_news_status'] = 'ok'
+        except Exception as exc:
+            # In-week items from the general feed are an explicit fallback, not stale last-week prose.
+            c['weekly_news'] = c.get('news', [])
+            c['weekly_news_status'] = 'fallback'
+            errors.append(f"{c['ticker']} weekly news: {str(exc)[:180]}")
+        return c
+
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        enriched = list(pool.map(weekly_news, enriched))
     available = sum(bool(c['market'].get('bars')) for c in enriched)
     fresh = sum(c['market'].get('status') == 'ok' for c in enriched)
     if fresh < len(listings) * .8:
@@ -187,6 +210,7 @@ def main():
                'source_url': SOURCE_URL, 'publication_url': PUBLICATION_URL,
                'spending_period': '2024/25', 'source_revision': '12 March 2026',
                'threshold_m': 50, 'companies': enriched, 'notes': notes, 'warnings': errors}
+    add_weekly_summaries(payload)
     temporary = path.with_suffix('.tmp')
     temporary.write_text(json.dumps(payload, ensure_ascii=False, separators=(',', ':')))
     temporary.replace(path)

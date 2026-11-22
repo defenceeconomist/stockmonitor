@@ -79,7 +79,7 @@ function renderCompany() {
   if(c.news_status && c.news_status!=='ok')warnings.push(`News refresh ${c.news_status}. ${c.news.length?'Previous headlines are retained.':'No headlines available.'}`);
   $('company-notice').hidden=!warnings.length;
   $('company-notice').textContent=warnings.join(' ');
-  renderChart();renderNews();
+  renderChart();renderNews();renderWeeklyCompany();
 }
 function renderChart() {
   const c=selected,visible=windowBars(c,chartPeriod),mode=$('chart-mode').value;
@@ -120,6 +120,27 @@ function renderNews() {
     renderCompany();$('stock-chart').scrollIntoView({behavior:'smooth',block:'center'});
   }));
 }
+function weeklyBody(c) {
+  const w=c.weekly_summary;
+  if(!w)return '<p>Weekly summary unavailable. Refresh the snapshot to generate it.</p>';
+  const prices=w.price_start?`${pretty(w.price_start)} – ${pretty(w.price_end)}`:`${pretty(w.week_start)} – ${pretty(w.week_end)}`;
+  const largest=w.largest_session?`Largest daily move: <strong class="${direction(w.largest_session.change_pct)}">${pct(w.largest_session.change_pct)}</strong> on ${pretty(w.largest_session.date)}.`:'';
+  const sources=(w.sources||[]).map((n,i)=>`<li><a href="${esc(n.url)}" target="_blank" rel="noopener noreferrer">[${i+1}] ${esc(n.headline)}</a><span> · ${esc(n.source)} · ${pretty(n.published)}${n.session?' · session '+pretty(n.session):''}</span></li>`).join('');
+  return `<div class="weekly-meta"><span class="weekly-status ${esc(w.status)}">${esc(w.label)}</span><span>${prices}</span></div><p class="weekly-text">${esc(w.text)}</p>${largest?`<p class="weekly-largest">${largest}</p>`:''}${sources?`<details class="weekly-sources"><summary>Read the supporting reports (${w.sources.length})</summary><ol>${sources}</ol></details>`:''}`;
+}
+function renderWeeklyCompany(){
+  $('company-weekly').innerHTML=`<div class="eyebrow">LATEST WEEK · FIXED WINDOW</div><h3>Weekly movement summary <span class="${direction(selected.weekly_summary?.change_pct)}">${pct(selected.weekly_summary?.change_pct)}</span></h3>${weeklyBody(selected)}`;
+}
+function renderWeeklyOverview(){
+ const period=dataset.weekly_period;
+ $('weekly-period').textContent=period?`${pretty(period.start)} – ${pretty(period.end)} · updated weekly · adjusted close-to-close returns`:'Weekly summaries awaiting refresh';
+ const term=$('weekly-search').value.toLowerCase();
+ const companies=dataset.companies.filter(c=>(c.name+' '+(c.ticker||'')).toLowerCase().includes(term));
+ $('weekly-overview').innerHTML=companies.map(c=>`<details class="weekly-company"><summary><span>${esc(c.name)}<small>${esc(c.ticker||'No direct quote')} · ${esc(c.weekly_summary?.label||'Unavailable')}</small></span><strong class="${direction(c.weekly_summary?.change_pct)}">${pct(c.weekly_summary?.change_pct)}</strong></summary><div class="weekly-content">${weeklyBody(c)}<button class="weekly-explore" data-weekly-company="${esc(c.name)}">Explore company chart and news</button></div></details>`).join('');
+ $('weekly-count').textContent=`${companies.length} of ${dataset.companies.length} company summaries shown. Open a row for the explanation and supporting sources.`;
+ $('weekly-overview').querySelectorAll('[data-weekly-company]').forEach(b=>b.addEventListener('click',()=>selectCompany(b.dataset.weeklyCompany,true)));
+}
+
 function renderTable(){
  const term=$('supplier-search').value.toLowerCase();
  const companies=dataset.companies.filter(c=>(!quotedOnly||c.ticker)&&(c.name+' '+(c.ticker||'')).toLowerCase().includes(term));
@@ -147,6 +168,7 @@ async function init(){
    $('map-period').addEventListener('change',renderMap);
    for(const [id,only] of [['all-companies',false],['quoted-only',true]])$(id).addEventListener('click',()=>{quotedOnly=only;$('all-companies').classList.toggle('active',!only);$('quoted-only').classList.toggle('active',only);$('all-companies').setAttribute('aria-pressed',String(!only));$('quoted-only').setAttribute('aria-pressed',String(only));renderMap();});
    document.querySelectorAll('[data-period]').forEach(b=>b.addEventListener('click',()=>{chartPeriod=b.dataset.period;highlighted=null;updateHorizons();renderCompany();}));
+   $('weekly-search').addEventListener('input',renderWeeklyOverview);renderWeeklyOverview();
    $('chart-mode').addEventListener('change',renderChart);$('supplier-search').addEventListener('input',renderTable);
    updateHorizons();renderMap();selectCompany(cs[0].name);
  }catch(error){$('load-error').hidden=false;$('load-error').textContent='The dashboard could not load. Please reload the page. '+error.message;console.error(error);}
