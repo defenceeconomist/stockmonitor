@@ -35,7 +35,7 @@ Briefings are available in the all-company weekly overview and alongside the sel
 
 ## Run locally
 
-Install [Quarto](https://quarto.org/docs/get-started/) (tested with 1.8.26) and Python 3.12+:
+Install [Quarto](https://quarto.org/docs/get-started/) (tested with 1.8.26), Python 3.12+ and Node.js 22+ (for chart calculation checks):
 
 ```sh
 python3 -m venv .venv
@@ -51,22 +51,33 @@ The checked-in snapshot makes rendering reproducible and network-free:
 quarto render
 ```
 
-To refresh prices and news manually:
+To refresh the monitor, run this one command from the repository root with your virtual environment activated:
 
 ```sh
-python3 scripts/update_data.py
-quarto render
+python3 scripts/update_monitor.py
 ```
 
-Use `--refresh-source` to deliberately re-download the pinned March 2026 MOD release. Future annual releases require reviewing the table layout, universe, ticker mapping and methodology, not silently switching datasets.
+It downloads prices, recent headlines and weekly evidence into a temporary candidate, regenerates weekly explanations, runs the Python and chart checks against that candidate, and renders a temporary website. Only after every step succeeds does it replace `data/snapshot.json` and `_site`. The rendered dashboard must match the candidate. A failed download/check/build retains the previous saved snapshot and website. A local lock prevents overlapping runs.
+
+Use `python3 scripts/update_monitor.py --cached` to verify and rebuild the saved data without network downloads. This is also the build path for code pushes. `scripts/update_data.py` remains available as a lower-level fetch command, but does not provide the full check/build process.
+
+Use `python3 scripts/update_monitor.py --refresh-source` to deliberately re-download the pinned March 2026 MOD release. Future annual releases require reviewing the table layout, universe, ticker mapping and methodology, not silently switching datasets.
+
+After each run, inspect `data/update-report.json`: it records success/failure, the failed step and error if any, snapshot date, company count, price-fetch successes and provider warnings. The report and build outputs are local artifacts and are not committed. A successful refresh may contain individual stale series/news; review its warnings before publishing.
+
+For a local update, review `quarto preview`, the update report, and `git diff -- data/snapshot.json`, then commit the snapshot and push to `main` to publish through GitHub Actions. The local command does not commit, push or deploy.
 
 The Quarto pre-render step runs `scripts/build.py` to copy the snapshot into the website assets. Plotly.js is vendored locally in `assets/plotly.min.js` (v3.4.0, MIT, see its header); no chart CDN is required.
 
 ## GitHub Pages and weekly refresh
 
-`.github/workflows/publish.yml` runs on pushes to `main`, manual dispatch, and **Saturdays at 08:00 UTC** (08:00 UK winter / 09:00 UK summer). GitHub schedules may run late or be disabled after prolonged repository inactivity. It refreshes the data, runs tests, builds Quarto, saves the data snapshot back to `main`, uploads `_site`, and deploys through the official GitHub Pages actions. Bot snapshot commits use `[skip ci]` to avoid a second build.
+`.github/workflows/publish.yml` runs on pushes to `main`, manual dispatch, and **Saturdays at 08:00 UTC** (08:00 UK winter / 09:00 UK summer). GitHub schedules may run late or be disabled after prolonged repository inactivity. Scheduled runs and manual dispatch refresh data using the same command as local updates. Code pushes verify and build the checked-in snapshot without downloading market data. A manual dispatch also offers **Build saved data without downloading prices or news** for a cached rebuild.
+
+To request a fresh update now, open the repository's **Actions → Refresh and publish → Run workflow**, select `main`, leave the cached option unchecked and run it. The workflow saves the verified snapshot back to `main`, uploads `_site`, and deploys through the official GitHub Pages actions. Bot snapshot commits use `[skip ci]` to avoid a second build. The `update-report` artifact is uploaded on successful and failed runs when a report is available. Runs are serialized and limited to 45 minutes.
 
 Repository Settings → Pages → Source must be **GitHub Actions**. No secrets are required beyond the automatically supplied `GITHUB_TOKEN`; the workflow requests content write and Pages deployment permissions. A failed refresh/build leaves the previous deployed website intact. Individual stale series/news are flagged on the site.
+
+If an update fails, inspect the failed workflow step and download its report. Retry transient provider failures; fewer than 80% successful price fetches blocks the snapshot. Fix data or test failures before retrying. A cached dispatch can publish code fixes using the previous snapshot. If a local process was forcibly stopped, confirm it is no longer running before removing `.update-lock` and retrying. Abrupt termination can leave `.update-*` temporary folders, which can be removed once no update is running. The rollback handles ordinary errors; forced termination during final file replacement may require restoring the snapshot from Git and rebuilding with `--cached`.
 
 ## Files
 
@@ -74,10 +85,12 @@ Repository Settings → Pages → Source must be **GitHub Actions**. No secrets 
 | --- | --- |
 | `index.qmd`, `_quarto.yml` | Quarto site and content |
 | `scripts/update_data.py` | Source parsing, price/news downloads and session pairing |
+| `scripts/update_monitor.py` | Full update process: candidate, checks, render, report and rollback |
 | `scripts/build.py` | Network-free static build preparation |
 | `data/listings.csv` | Explicit MOD holding-company to direct listing mapping |
 | `data/snapshot.json` | Auditable latest successful cached dataset |
 | `assets/app.js`, `assets/styles.css` | Interactive charts and responsive design |
 | `tests/test_pipeline.py` | Threshold, source, session-pairing and snapshot checks |
+| `tests/test_update_monitor.py` | Failed-update preservation, output promotion and overlapping-run checks |
 
 MOD source data © Crown copyright, available under the [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/). Market and news content remain subject to their providers' terms. Project code is MIT licensed.

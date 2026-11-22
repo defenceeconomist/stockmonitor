@@ -2,6 +2,7 @@ from copy import deepcopy
 from datetime import datetime
 from pathlib import Path
 import json
+import os
 import sys
 import unittest
 from zoneinfo import ZoneInfo
@@ -67,7 +68,7 @@ class WeeklyTests(unittest.TestCase):
 
     def test_every_company_has_only_in_week_evidence(self):
         root=Path(__file__).resolve().parents[1]
-        data=add_weekly_summaries(json.loads((root/'data/snapshot.json').read_text()))
+        data=add_weekly_summaries(json.loads(Path(os.environ.get('STOCKMONITOR_SNAPSHOT', root/'data/snapshot.json')).read_text()))
         self.assertEqual(len(data['companies']),78)
         for c in data['companies']:
             w=c['weekly_summary'];self.assertEqual(w['week_end'],data['weekly_period']['end'])

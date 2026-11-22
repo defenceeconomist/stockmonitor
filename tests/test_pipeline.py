@@ -1,6 +1,7 @@
 import importlib.util
 import unittest
 import sys
+import os
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
@@ -40,7 +41,7 @@ class PipelineTests(unittest.TestCase):
 
     def test_snapshot_integrity(self):
         import json, csv
-        snapshot = json.loads((pipeline.ROOT/'data/snapshot.json').read_text())
+        snapshot = json.loads(Path(os.environ.get('STOCKMONITOR_SNAPSHOT', pipeline.ROOT/'data/snapshot.json')).read_text())
         with (pipeline.ROOT/'data/listings.csv').open() as handle:
             mappings = list(csv.DictReader(handle))
         self.assertEqual(len(mappings), len({c['ticker'] for c in mappings}))

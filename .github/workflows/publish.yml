@@ -6,6 +6,11 @@ on:
   schedule:
     - cron: '0 8 * * 6'
   workflow_dispatch:
+    inputs:
+      cached:
+        description: Build saved data without downloading prices or news
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -18,7 +23,9 @@ concurrency:
 
 jobs:
   build:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -30,24 +37,32 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Check chart calculations
-        run: node tests/test_windows.cjs
       - uses: quarto-dev/quarto-actions/setup@v2
         with:
           version: '1.8.26'
-      - name: Refresh prices and headlines
-        run: python3 scripts/update_data.py
-      - name: Check data and session mapping
-        run: python3 -m unittest discover -s tests -v
-      - name: Render Quarto site
-        run: quarto render
+      - name: Refresh, verify and build monitor
+        env:
+          USE_CACHED: ${{ github.event_name == 'push' || inputs.cached == true }}
+        run: |
+          if [ "$USE_CACHED" = "true" ]; then
+            python3 scripts/update_monitor.py --cached
+          else
+            python3 scripts/update_monitor.py
+          fi
+      - name: Save update report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: update-report
+          path: data/update-report.json
+          if-no-files-found: ignore
       - name: Save refreshed data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/snapshot.json
           if ! git diff --cached --quiet; then
-            git commit -m "Refresh weekly market data and news [skip ci]"
+            git commit -m "Refresh market data and news [skip ci]"
             git push
           fi
       - uses: actions/configure-pages@v5

@@ -143,6 +143,8 @@ def map_news(stories, market):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--refresh-source', action='store_true')
+    parser.add_argument('--output', type=Path, default=ROOT / 'data/snapshot.json',
+                        help='Write a candidate snapshot here instead of replacing the saved snapshot')
     args = parser.parse_args()
     source = ROOT / 'data/source/mod-tic-2025.ods'
     if args.refresh_source or not source.exists():
@@ -152,8 +154,9 @@ def main():
         listings = {r['organisation']: r for r in csv.DictReader(handle)}
     if set(listings) - {c['name'] for c in companies}:
         raise ValueError('Listing mapping contains unknown Table 4a companies')
-    path = ROOT / 'data/snapshot.json'
-    previous = json.loads(path.read_text()) if path.exists() else {}
+    path = args.output
+    saved = ROOT / 'data/snapshot.json'
+    previous = json.loads(saved.read_text()) if saved.exists() else {}
     old = {c['name']: c for c in previous.get('companies', [])}
     errors = []
 

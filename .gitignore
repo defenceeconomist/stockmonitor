@@ -8,3 +8,6 @@ __pycache__/
 **/*.quarto_ipynb
 
 /assets/dashboard.json
+/.update-lock/
+/.update-*/
+/data/update-report.json
