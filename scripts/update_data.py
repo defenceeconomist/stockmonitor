@@ -159,6 +159,7 @@ def main():
     previous = json.loads(saved.read_text()) if saved.exists() else {}
     old = {c['name']: c for c in previous.get('companies', [])}
     errors = []
+    top_names = {c['name'] for c in sorted(companies, key=lambda c: (-c['spend_m'], c['name']))[:50]}
 
     def enrich(c):
         listing = listings.get(c['name'])
@@ -167,23 +168,26 @@ def main():
         if not listing:
             c['market'] = {'status': 'unmapped', 'bars': []}
             c['news'] = []
-            return c
+            # Private suppliers still have news, even though they have no share price.
+            if c['name'] not in top_names:
+                return c
         try:
-            c['market'] = fetch_market(c['ticker'])
+            if listing:
+                c['market'] = fetch_market(c['ticker'])
         except Exception as exc:
             c['market'] = dict(old.get(c['name'], {}).get('market', {'bars': []}))
             c['market']['status'] = 'stale' if c['market'].get('bars') else 'unavailable'
             errors.append(f"{c['ticker']} prices: {str(exc)[:180]}")
         try:
-            c['news'] = map_news(fetch_news(listing['news_name']), c['market'])
+            c['news'] = map_news(fetch_news(c['news_name']), c['market'])
             c['news_status'] = 'ok'
             c['news_fetched_at'] = datetime.now(timezone.utc).isoformat()
         except Exception as exc:
             c['news'] = map_news(old.get(c['name'], {}).get('news', []), c['market'])
             c['news_status'] = 'stale' if c['news'] else 'unavailable'
             c['news_fetched_at'] = old.get(c['name'], {}).get('news_fetched_at')
-            errors.append(f"{c['ticker']} news: {str(exc)[:180]}")
-        print(f"{c['ticker']}: {len(c['market']['bars'])} sessions, {len(c['news'])} headlines", flush=True)
+            errors.append(f"{c['ticker'] or c['name']} news: {str(exc)[:180]}")
+        print(f"{c['ticker'] or c['name']}: {len(c['market']['bars'])} sessions, {len(c['news'])} headlines", flush=True)
         return c
 
     with ThreadPoolExecutor(max_workers=4) as pool:

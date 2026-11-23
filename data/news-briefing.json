@@ -1,0 +1,684 @@
+{
+  "author": "Codex",
+  "generated_at": "2026-11-23T13:04:21.412976+00:00",
+  "source_generated_at": "2026-11-23T13:01:04.354787+00:00",
+  "window_start": "2026-11-16T13:01:04.354787+00:00",
+  "overview": "Contract awards feature prominently, from BAE’s P-8A work to Leidos’ Marine Corps radars. Babcock and Mitie reported higher half-year profits. Fresh Monday coverage turns to Capita’s leadership exit and Compass’s proposed US listing. These stories provide company context; they do not attribute the week’s share-price returns.",
+  "companies": [
+    {
+      "name": "BAE Systems PLC",
+      "status": "covered",
+      "summary": "BAE won a $104.7m US Navy award for P-8A survivability work. Separate coverage reports more than 1,000 job cuts across its headquarters and aviation business.",
+      "sources": [
+        {
+          "title": "U.S. Navy Awards BAE Systems $104.7M to Advance P-8A Survivability Against Missile and Electronic Threats - Army Recognition",
+          "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQeVdfeXZiRjhUOUZQTEQyZUdwXzVsd1VzM2NlaWRSMHViYmJibFZNZEdsYmRYUHB5RWVRWU5oa3htU0tOQUFsUFVuRzhYX0dtWXpSeUJJa3kyUDF2TEZHdU5IMzlOZ3hNWG53YUxCUFV6emZYcERBR09iMTdQT1ZfWm1TVWhBNzhqREM1TXdKZmlWZFNvUGMtS1Jrcm9lSDNJWWVTVTA3bU1SOS1fXzlxWW5aZnRMNl9UbUZ3Wkg1VnlpY2dTWDJ0NXdIRG94b3kxZVhTQ2V6YWFOTXBVaF9CdGV3VFF4UUJfbVhR?oc=5",
+          "source": "Army Recognition",
+          "published": "2026-11-20T12:03:41+00:00"
+        },
+        {
+          "title": "BAE Systems cuts more than 1,000 jobs in headquarters and aviation business - marketscreener.com",
+          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNV3ZRNl9oZWFsLUVoUy14cWtvbWVjSFVxSVhYOG5DYU8tWUNHMGpadEgxUV84R0QzMnZIa3R6UXZSSklFSmFtMUhjVGNQR1VGeGZYQzAyUWtfTjNDRmdJOTdoaUpmU0dqUWJEVVNuM2pRT2RfVEdzTlZVVmNtSWxjMDRGTmVaU3ZFR2JKcmhsNnkySzNlbF9ibkFoemN1bTdPcGUyUkJHa2tWc0Z5bkc0WVVYUnFybGFHSFd3di0yeFFIN2ZtRXRV?oc=5",
+          "source": "marketscreener.com",
+          "published": "2026-11-19T09:34:40+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Babcock International Group PLC",
+      "status": "covered",
+      "summary": "Half-year profit rose 13%, with a UK submarine-support contract nearing signature. The Wall Street Journal linked an earnings beat and a push into drones to a share-price rise during the week.",
+      "sources": [
+        {
+          "title": "Babcock half-year profit rises 13 per cent, UK submarine support contract nears signing - Baird Maritime",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOZHloUHg2V25zMW1IS3Y4M2hJTS15bTgtUXdxUnBsa3VvMGtiREhhdUF6U1NsR3NJRWxZSjFQczJPcVlkSkRuaUQ1dU5zdWw0WGRMTS0ydFctSHZKVDQ2RzJMckVGdFYzVWhUelBrQjNtZ3B4RFlkcDcxaHhVOUhXR1pzcEh1c1VhTklMLXpWZ0dsbHlnWGNRc0RRVklWVXB3bXFxMdIBsgFBVV95cUxPZ04wYUQ4b0hoMjJLREl2eUU5dU5xemNGdGVJV0V2WGlLSjdDZ2NBVHlVbWlUeGtpdC1EdE10UURrUm55Nk8xVmY1QTY0MThCTFBzZy1zTkpYMWNqR2t4clhNQ1VyV3k0eDFKZTdTbGIxWExRR3Z5ZHNTWkd2Wnd6d2N2cmZIQU1sbTV5cnNxVlA2MElGbzVwLTRhMjlwcGRzQ0N4TEN0dW9EUnZFUXJIUURn?oc=5",
+          "source": "Baird Maritime",
+          "published": "2026-11-19T18:13:18+00:00"
+        },
+        {
+          "title": "Babcock Shares Climb on Earnings Beat, Push Into Drones - WSJ",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQU2RLc1VZV1M2N0xheG51YjFqdGt1UFVkZ19ZQWxXRlhhOVVMaGlWZkYyR3cxWWNDSUs2RTlQSEQzTXQyWmluNVpnTDZsYzBZM1l1czNqWlgwYlVQMk11LU1WTktrdWFNSmppRkxqVDVWbmc0YlF4cXFmMFFXOU5qX0l6UTB0cFc5cDFyamYxc29sUC15aDAzWlpGbXVMNm1SckJV?oc=5",
+          "source": "WSJ",
+          "published": "2026-11-19T11:25:00+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Rolls-Royce Holdings PLC",
+      "status": "covered",
+      "summary": "MarketWatch reported that Rolls-Royce shares fell on Friday and underperformed the market. The available headline establishes the session’s direction but offers no company-specific explanation.",
+      "sources": [
+        {
+          "title": "Rolls-Royce Holdings falls Friday, underperforms market - MarketWatch",
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNX3Z6eFFYbXVDa1hNTHN5SUcxamowZnIxQmR6Wld2bERoY0JDdTZ0ejhhX3B4RGxhREswMWxjRVhCYWszQWFzSXdJYk5iWjFNNDRLZFR5clNSWjExc2ZoMWp4X2EtU09jNFM3c3FTR2JaOEp5UEo2NnNxOFRqcnY0SFdtLU5rbmhzd25pU1k1TVhOVS12QS13dzBhVGpKblF0R3Q2MVFmNl9PTklaMUE3T2JiazA?oc=5",
+          "source": "MarketWatch",
+          "published": "2026-11-20T17:05:00+00:00"
+        }
+      ]
+    },
+    {
+      "name": "QinetiQ Group PLC",
+      "status": "covered",
+      "summary": "Coverage includes QinetiQ’s latest earnings-call highlights and a reported £58,800 insider share purchase. The saved earnings headline is truncated, so it does not support a reliable summary of the results themselves.",
+      "sources": [
+        {
+          "title": "QinetiQ Group PLC (QNTQF) (Q2 2027) Earnings Call Highlights: Ma - GuruFocus",
+          "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNaUNwRHhMbEc2WmtRdTYwdHVERDc5OTliakprYi1Qd1RnX3BZeU1tRGowRzBCYVVfcnAwMXJNQW53TXhvV2RXUG1lTk8wNVRvb0UyUGJ3dTZEOE9LQW80ckpIdzk1aUk5M1JtYkRfWDljQlRYcFZTY2xsVWJhTlV0MHZnczE3c242enRNM0xwd0FCdXhzczJuZThIRm16c3dXSjFOY28yVXlBb0hTNWVJdE9FZXhKMHhlcXh3eXZUZ2taQWlQRVZsMk5DSXhVS25hMUstYkl4TWxWY011RDFnWnA2bTVIakhleTZPU2JBZkhKRFN6?oc=5",
+          "source": "GuruFocus",
+          "published": "2026-11-21T02:06:16+00:00"
+        },
+        {
+          "title": "QinetiQ Group (LON:QQ) Insider Purchases £58,800 in Stock - MarketBeat",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPSVZOcXJhNElON1drYVZ5VnRoQk10SDI0R1JmMDRwOEM0WDFaSjhFMF93MkdDQW5kdGR3SDg1bzJVMmU3NDYteXZ1V3M0NFBvV1ZTTWlMMDZxVnprNkdIeWhyNlU5RVRUVmpwWXg2dVIyUFpjbmxQNm5vOGVmdzRCNHlCN2lsNGlRSm42WHJ0X1MxalVuTzk0SldQMW1IOWRNX2w5ZGM1SDFaOXJUekJmMjlpajhaUQ?oc=5",
+          "source": "MarketBeat",
+          "published": "2026-11-17T18:15:02+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Leonardo SpA",
+      "status": "covered",
+      "summary": "Leonardo and CSG agreed cooperation on HITFACT MkII turret sales and production, alongside a demonstration of CSG’s CFL-120 Karpat tank.",
+      "sources": [
+        {
+          "title": "CSG demonstrates CFL-120 Karpat tank and agrees cooperation with Leonardo on HITFACT MkII turret sales and production - Defence Industry Europe",
+          "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOVDc1Z2s2SU40S3JKRllCM0hkV2FVUTI0VUJhNVI3TlBMbFF2N0Ftc1hJWW1DcmRXU3RpUUhScWFJYUV0cHlKT2lqTUJVbVotcFF6d0VUeE1KcWFJNFZzUTRyLU5oM1ZEVWxPTGVFRVd4anhtUnFqRmszdDAwMzg4YlNhUVJDUDNMSGNielMteF94NUU3M1pXYmoxNHMxTWhTUTgwY3VCbXZ2YlNoT2ZtaEFnTWU5QmQ5dEJWUEE3V19rMVdKY1Y3RkswNjdOSmJZT3pNX0xTbWlsRFJXQWtz?oc=5",
+          "source": "Defence Industry Europe",
+          "published": "2026-11-19T15:29:11+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Airbus Group SE",
+      "status": "covered",
+      "summary": "Dassault has taken Airbus to arbitration over a billion-euro drone contract, according to Global Arbitration Review. UK coverage also highlights pressure over Skynet satellite work and associated aviation jobs.",
+      "sources": [
+        {
+          "title": "Dassault takes Airbus to arbitration over billion-euro drone contract - Global Arbitration Review",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxORTZWN3BVVm9jazVuYUVwNUg5RTIya3phc2hnZS1iRk1KSHI1Wkptdi1lQzk3a3A1b0hjSV9TQlF5ZTZPWExNNVNha0NnZjdXb3l1ZTY4bmFnT3o4U0x2UU5SUUJpUVdmMllLY09tMXk2TzFCVDdoN0s0MkRySFZ3VEIyb1c4MnR1WGhVRXUxeXNGZFZvcVNnbUxMSHIyOFhIV0NiMzF2ZjRLT1lDeWdJ?oc=5",
+          "source": "Global Arbitration Review",
+          "published": "2026-11-20T20:19:05+00:00"
+        },
+        {
+          "title": "“Skynet must be awarded to Airbus” as BAE Systems announces savage job cuts - Portsmouth News",
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNVFVnQnRxTXJTR1c1MjBVTjFNcC1oOUtsbFUzX1JZVHdIWno3ZkI5cmFhbzBUSzJqeVJmX1Rvc0ItdmpmbEVqaVhXeXRaS0pWeUxYS2NNUHg2bmdDLXdJbWR0Z1Q5aE1Sa0ZmTE1GTTcyYmN4V09JSHFwTWtDVmJpRGttLUludUdZWlhjX09RWmxTVndV?oc=5",
+          "source": "Portsmouth News",
+          "published": "2026-11-18T18:35:00+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Thales",
+      "status": "covered",
+      "summary": "The Netherlands selected Thales to modernise military air-traffic-control radars. Thales also announced an L-band radar satellite for the Italian Space Agency, adding space work to the week’s defence coverage.",
+      "sources": [
+        {
+          "title": "Royal Netherlands Air & Space Force selects Thales to modernise military air traffic control radar systems - EDR Magazine - European Defence Review",
+          "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPbVZ2UGtkSUN4cmlqMlFNNDdhSkZPY0lOUU5iaHFNUm5TVU9IY3pnaUZUamRsYXliN2JZYUxBdVRfTGRwNF9Ibk5QdWpuRjdhTmZOYnY4Y1F4cjRxR0d0QXo3WjMtMEZQbFJOYTJsYVFnQk9OZHNjWFhxOUs3TFUtb2lOdzIyUU5jZWVxMURYc2cxTnoyOUpkdGl6M3lGbjJaU1JNX05SWmtCeVdIaDMtUXJXREJfRlNMMHNPY0gtTlh6eV9RRjFFdDNzcw?oc=5",
+          "source": "EDR Magazine - European Defence Review",
+          "published": "2026-11-23T10:40:16+00:00"
+        },
+        {
+          "title": "Thales Alenia Space to develop an L-band Synthetic Aperture Radar satellite for the Italian Space Agency - Thales",
+          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQMHJFd2hKMFpzcmZSSjVOU1VEYXBQbzNYTHBMSlpzdmhRaEEzQXRrbVIyY05JT002SE9YMHhrQkNTMklEblVCWjVKUWF6a0dkWXpiajJNR1E4eWFKaHItZ251b0JFY2VEeUc2S0t2d2VrdlQ3ZWdtd01oRjhxSUtkYW02aWdUVG1mOXg3ZV9lRlFGVmhSakR3aE5OWE4wVTU5VktmS3hYd2lCdHJpRnpUTzlBX0JGbG9mVFNCWXlGOUxUN1h6b0E?oc=5",
+          "source": "Thales",
+          "published": "2026-11-17T09:59:37+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Leidos Holdings Inc.",
+      "status": "covered",
+      "summary": "Leidos won a $40.8m Marine Corps radar award. Coverage identifies 14 medium-range air-defence radar systems; these reports describe the same award rather than separate contract wins.",
+      "sources": [
+        {
+          "title": "Leidos Wins $40.8M Marine Corps Radar Contract - WashingtonExec",
+          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNQzRfMUxGQUZlRS1kMFlEdW05T0ktQmR0ZHdXZTFIWGlFajF1V1htYlZXZl9heG5waHdsT0JXQkMwUjVLNE4yd0VORUNhRXo2MlQ2a2hCZXctRVNnNDQySlJheUFodnFoMkRrMUd0S3lJQTVCeHNHOVBrczN2MDNaa01oM0JGVXYzRVpfU2h4c3pPdFlOcVB4YXpWNE9acWZI?oc=5",
+          "source": "WashingtonExec",
+          "published": "2026-11-23T03:04:07+00:00"
+        },
+        {
+          "title": "US Marines awards $40.8M contract to Leidos for 14 MRADR Medium Range Air Defense Radar systems - Army Recognition",
+          "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQclBzYnVOUHd0OGdQNG9WOTZjSHdTUnZydzNqeVUyMktpbVRPeDB3VU9DVXRkeDJTMnRLQTh5ZUI1R3kzaURSZDBuUVdoME9RMjZ4dUJ2eHNLeHNfdm1VQmd4NWhUTmp5cERTQUxMVmNaT2FpSzRhZDVkQVYwTV8ycTVGT3VqdkFjakljM2Y5bDhacXZTZldiZ0F0dEtNMks1a3IzSVRwQjg0VnhzTlk3di1xNEVnYlpBMW5BNDllWHFjWmhaRlp0Z0NKaW11a0g3dldYOGpKb0RLSlV0V1BN?oc=5",
+          "source": "Army Recognition",
+          "published": "2026-11-19T10:54:13+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Serco Group PLC",
+      "status": "covered",
+      "summary": "Serco launched a High Court claim against the Ministry of Justice over a procurement dispute. The saved coverage identifies a legal challenge; it does not establish the outcome or financial effect.",
+      "sources": [
+        {
+          "title": "Serco launches High Court claim against Ministry of Justice - City AM",
+          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxORWNZLVZ1UEVfZnJGa1pjUmZFYkdDb1NNeWhJdUpwWE81eUFDYjZuT29MVEFGbzh3dTVBa3I1a18xR0EwNDhSal9MLU5GNldtdzE2YUZ2VkxNeU5pSzRDSXdYVE5kQVJNb1FYci1TN1Bxd1lveFVzOUlPVlJiUjQ0cXQxaWtSZXh2MnBB?oc=5",
+          "source": "City AM",
+          "published": "2026-11-17T15:28:06+00:00"
+        }
+      ]
+    },
+    {
+      "name": "The Boeing Company",
+      "status": "covered",
+      "summary": "Reuters reports that Boeing has left open the possibility of further layoffs amid stalled production plans. BofA separately reiterated its Buy rating, citing backlog strength; that remains an analyst assessment.",
+      "sources": [
+        {
+          "title": "Boeing leaves open possibility of more layoffs amid stalled production plans - Reuters",
+          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOVjBUU3dCam5XaXYwR01DclNRQ1I5dDFmSVpxMEl6M0dmYml3OHdnWHZSR2tSTGF1NTJ5LXNCTzFMNTlGQkxLLXBXNnFJVWxISTJCbjl5TTFwZ3loaWh3RzBEOW56ZmhPRzluVzJQaWtSV3NJTERyUGZWRms5eDZkcGZOeXZFS1hNeUltWUZyNlliTkNTbFBvMkdIczRza1lPZlJibmVESTFkMVduenZyUkRxVzJIbi1RQTU5ZG5jM1l6Q0tw?oc=5",
+          "source": "Reuters",
+          "published": "2026-11-20T15:39:43+00:00"
+        },
+        {
+          "title": "BofA reiterates Boeing stock Buy rating on backlog strength - Investing.com",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPZkJldVYtX1A0aWwzUTVJVy00czltZXlrVUwzZF8xaTliWlg2SUF1RFFrOF8tRzlGTEZGVVpFZnN5VlpsSFJWY2hId1pPcFBGbU1YaVZkZXlUR1U5elgwdzJIOEJWX0thN3g4YnVYelpmMml6YlhyVmNQcFFGTjRWRzUzRl9vVHRhcV9keTJ1emJsd1ZIcVVUbHh6THhWeTRDTjZRWWthejZJenFCb2NwWmlJOXdzWi0zd2FR?oc=5",
+          "source": "Investing.com",
+          "published": "2026-11-23T11:25:05+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Bouygues",
+      "status": "covered",
+      "summary": "Coverage points to EDF civil-engineering negotiations involving Bouygues, Vinci and Eiffage. Bouygues’ Colas subsidiary also secured a €46m airport-runway widening and resurfacing contract in Saint Lucia.",
+      "sources": [
+        {
+          "title": "EDF negotiates EPR2 civil engineering deal with Vinci, Bouygues and Eiffage - energynews.pro",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOc09Xd0ctU05aRTNkanBZeXgxRlN4VFhrMjk4a3lOR3o0YW9ybjhMbzF1SDZDak15Rnh2LVk5V0RlWkc1TlZIaTI2cFJvRUlOUnBKUmVLeEZ2R0pVSHRscmo4emxVa1FnNmdCc1BBbGNzb1BmeWpOMEdVZVBEU05tMXNXVUZYSGszM0JRV2dubEVkcTNhVG0wUUwybjVSSEp6R0E?oc=5",
+          "source": "energynews.pro",
+          "published": "2026-11-19T09:03:38+00:00"
+        },
+        {
+          "title": "Bouygues arm Colas wins EUR 46 million deal to widen and resurface Saint Lucia’s Hewanorra airport runway - Prop News Time",
+          "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOWEVxLTJJV1B1bWtWekZaaWg0WGUtX1pkM1hFVkpYLVIyenQ1MzJ2aG1UQnhIUERVUmRIVV9GQ3Y3LWY2Wk1NX19iTUxucHUwdkFWMWczM2cwckVPeFo0allHN2xnMmRfdGdJb01JWTNyV1l0RVlNemN3Qi1qUktOb2k4SFBRUW4tcjdXN1UxX0JCQ3dMLS1IWldMTUZJTmNFVEZYc2tEdGNuMFBfYWJrREtIV21DTlZxTzlwWWdlZ0k0V01aR0ZSLWM1MzFvLXBZNWdkVEo3VTZEUjV4aThOdVFlUV94OUUtTlktajd3?oc=5",
+          "source": "Prop News Time",
+          "published": "2026-11-19T10:50:40+00:00"
+        }
+      ]
+    },
+    {
+      "name": "KBR Inc.",
+      "status": "covered",
+      "summary": "KBR’s planned Trinzic spin-off is advancing through a $500m senior-notes offering. Coverage says the planned business is expected to launch with more than $5bn in annual revenue; the separation remains prospective.",
+      "sources": [
+        {
+          "title": "KBR Announces Private Offering of $500 Million Senior Notes in Connection With Planned Trinzic Spin-Off - Quiver Quantitative",
+          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQT3RLREJ3Y0M2eXZmcXUyNDZyLWdWZ2lFam1QbTJBMEVkeHYxOUJiTGkweGpTUFRuR0FvWFB5QzU5YUFXYzhiN2dwNk1fMklueUpoLUtZWTNSanFxRjlMbUxvWGxLYm5zV2hDMWZydmJwYWFEWnpmbzlBTUk5STBEOEtoVWlBc0hrYWhUR0RLS3huUTBvUnowTTBLbnF5NUswN0RYbnhzQzVsVFdhS2hPT0xFbzlGU0JCYlBMUWExd1BKd3FJVFdwUHlLX0QwZE53azJaRQ?oc=5",
+          "source": "Quiver Quantitative",
+          "published": "2026-11-18T12:42:00+00:00"
+        },
+        {
+          "title": "A planned KBR spin-off, Trinzic, is expected to launch with more than $5 billion in annual revenue. - Stock Titan",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOZ2dSeXRIdjlDOFhaeHFLd0lfLUtGLURCcl91LXE1bXM3Um5obHlLMXRjSGR6VFR1S01LU05EaEJkQ1V4RjNJRzRzX0xQNWt1NWUxODFwSkRJUmw1Sks1bTNDN1B5YmxKNzNCTWNOM1JYbUZldXJBZXhVUG5VWS05UElYMFQweW9QeEVtSHlDYTA5OHB1bmt4V2thREI5a2pPajNB?oc=5",
+          "source": "Stock Titan",
+          "published": "2026-11-19T22:56:00+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Mitie Group PLC",
+      "status": "covered",
+      "summary": "Mitie reported a 14% rise in half-year operating profit and a record £16.4bn order book. Its planned acquisition by OCS is also attracting UK competition scrutiny; completion is not established by these headlines.",
+      "sources": [
+        {
+          "title": "Mitie Reports 14% Rise in Half-Year Operating Profit as Order Book Reaches Record £16.4 Billion - Yahoo Finance UK",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOSVYyYXloU1pMMFRfLTdjNjRlWU5vS1pLVlFoaVpZZE1Fc3V6MHZZMkE3eW43RHk0Q25JMElRQlQ3THBFNTZVaGY5NXN5ZnlNUXFCZmZtVkJxUlBCa1BMNzhvbGR6YUxZQ0U0TUh2dE0xMUJzTXRQbWJ3OTF6QVk3Tg?oc=5",
+          "source": "Yahoo Finance UK",
+          "published": "2026-11-19T10:08:33+00:00"
+        },
+        {
+          "title": "UK competition watchdog mulls investigating OCS's planned Mitie buy - www.marketscreener.com",
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNUHBoOTliUWF1LWNxMUVPNDBIOUZFNjNtcW1yVjQyZUN0aU4xRS02bWlXc0U5ZjZqQ2NDUUZRRldTcnpXSUtKVF9XdmhHOUZWb1BZRkNFdGxXMnhNSlVzamluWEJVUXhMXzhxcV9uTGc3SU93RmNjMy1jZXVuVVAxaHlMWnV4ajlELXI4eGVmMV94cWpZeExjY0RvYzVYV1NBa2VpNFk4czJlQlhiNVZpQWR3MUExNEp2Wk9Feg?oc=5",
+          "source": "www.marketscreener.com",
+          "published": "2026-11-18T14:06:12+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Capita PLC",
+      "status": "covered",
+      "summary": "Capita’s chief executive has left following problems with the Civil Service pension scheme. Separate coverage reports a cash call and a 35-year share-price low; these are fresh Monday developments beyond the completed weekly-return window.",
+      "sources": [
+        {
+          "title": "Capita boss quits after Civil Service pension scheme row - The Independent",
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOWElSVTZqdkViTXUtTFk4ZGtsZ2FLWUxOeEtZRzE1b3NramdqalpTblRjSDUybzRiTEVEdWpuQllaZnBuTnpsZy00SW95UWY4YzhuR3hoYl83WW1SckR0a0tUTXZncDZkdDAtT3d6NU9DNl9oWktFMHdzUDJ0SEc5djhiaEV5blZmX3RzcTJ6b0xxWlM0YTAxZUR2QQ?oc=5",
+          "source": "The Independent",
+          "published": "2026-11-23T11:47:00+00:00"
+        },
+        {
+          "title": "UK's Capita pension woes force CEO exit and cash call; shares hit 35-year low - London South East",
+          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNSEVBUENZTE83ZGxWOUx0NkROS3JYYmY4M0tReGl4MkhIeWpLdFdFRzJHM1FlLVdVYnc5eTd6RmlzenFXOF81QzJ1ekx2cnZsZDhnNGdzU1VGV1VhTzFiT3ZXcERxYWZ5Uy1ZYlJmeURLWHF5eXIyZU85MG9ia2xCajkxZ0d6RzI0Yjd2c3dPOW5FUVljenU2c2RnZDZBMVVsTFNDQnJGby1UdFZvdTJ4dU90WFo2MnpZd01yLUwtN28?oc=5",
+          "source": "London South East",
+          "published": "2026-11-23T11:46:00+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Agence des participations de l'État",
+      "status": "no_news",
+      "summary": "No qualifying company-specific headline was found in the saved seven-day coverage. This is a gap in the available feed, not evidence that the company had no news.",
+      "sources": []
+    },
+    {
+      "name": "General Dynamics Corporation",
+      "status": "covered",
+      "summary": "General Dynamics secured $332.5m for US Army Stryker support. Separate reporting says it lost its challenge over a $10.5bn Special Operations contract awarded to Lockheed Martin.",
+      "sources": [
+        {
+          "title": "General Dynamics Land Systems Wins $332.5 Million Army Contract for Stryker Support - marketscreener.com",
+          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQLTBibzhNYk5QT2EtUHhGTXFTemNEdnNnRlpRbW5qYXd0WWJlTU40SmswazdkLXNtcGR6Umo1M3hIT0VmY1N4cVN3X1NBVS1yUUdFVkFUcEczeTVYMkltT0ZEdllQbWV2dFdHVWRIcE1ZZlZQN19uZzZlaHJWWm5nSWEteDFuV1BFT1l1LWNjRGlJRDlkSnc2Rkc1VHR4M3VRdExTYXJFTkt2ZF9TVHdFMEVpYkJ0UDV5T0pXN0tkT0RGbklLZWJ5M25VR2dNTEtC?oc=5",
+          "source": "marketscreener.com",
+          "published": "2026-11-18T23:04:31+00:00"
+        },
+        {
+          "title": "General Dynamics loses fight over $10.5 billion Special Operations contract awarded to Lockheed Martin - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNVUdiVWVWbUwwemNfMHVueEhDbHJaZ190MFNQWUx1RE54NndWSlphUkx5d0p6dW9EUmU1NVhSbzN6QmZOSTV0M3ptY0J3ZzlFYmVTeHBndHNjVGxzLVpVZ1Z0aDFNWUVFdnE2NzlucWZBUDNVQTB0Rm5sLTVway1BcjJKNTZKbHhYTVBpRVBwQmtwQVJXMXdIdzlB?oc=5",
+          "source": "Yahoo Finance",
+          "published": "2026-11-19T14:00:05+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Lockheed Martin Corporation",
+      "status": "covered",
+      "summary": "Lockheed Martin received a $330.6m Navy contract modification, with related coverage identifying F-35 Lot 22 production. This is a contract amendment, rather than evidence of a new standalone programme.",
+      "sources": [
+        {
+          "title": "Lockheed Martin awarded $330.6M Navy contract modification - TipRanks",
+          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNZWlrRTZJUzZzZnhPb0czVnp2U3BKM3h6bjA3blJoRTlUUFZRelJzQzYzTXZScXpNM09LOVhTeE9maktrbnpOYjBZdDd0cS1fSl92MVgzb0JidGZmYVpzMWRoeVVIV1lWQUVNUDREVFdwRWh0SVJTQlpGX284VVRBM0RHQS14RnZpYmZXVnBKaGZycHVNaXZlS2hyYWFPd1dUV0FSS29Zall6NVU?oc=5",
+          "source": "TipRanks",
+          "published": "2026-11-20T22:20:40+00:00"
+        },
+        {
+          "title": "Lockheed Martin (LMT) Secures $330.6M Contract Modification for F-35 Lot 22 Production - GuruFocus",
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNbGZmMENjZGE0cEtzcVJYRTZXa1FzaExfWGI5MHgwQXBLWEh0b3R2MWVqaDhUT3dTWHBzSk91VWZ0RE1CaDJHQVNNNXNFa3RoVURMdGR6MWs4WVRDb3pWSmUxa1ZIVWdXZUpwVmFlTEFTQXRMaklrMjV3VlZrWkU4eElxTUpMOWpITVpUM2I5aWU4a1JlVFp3T0dRYldwZm96NXZnS3dwbFFYMGhzM2xSWVFqQXZVRV9sM2ZWWg?oc=5",
+          "source": "GuruFocus",
+          "published": "2026-11-20T22:55:22+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Sociedad Estatal de Participaciones Industriales",
+      "status": "no_news",
+      "summary": "No qualifying company-specific headline was found in the saved seven-day coverage. This is a gap in the available feed, not evidence that the company had no news.",
+      "sources": []
+    },
+    {
+      "name": "BT Group PLC",
+      "status": "covered",
+      "summary": "Specialist coverage focuses on BT’s Openreach and Consumer businesses and expectations for a stronger second-half cash contribution. The cash outlook is prospective; the saved headlines do not establish delivery against it.",
+      "sources": [
+        {
+          "title": "BTwatch: ‘better BT’ means evolved Openreach, refreshed Consumer - Telco Titans",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOREFqZVdSZTRsaVM2LVFybjJVNXpVT2FocUhXc09zTU44QkdtNHNWTHNpcUx0X2tPVzNKQlpNSnFTb2UzVkR5eXU2YkZMM1JzMDIwZ1BxZXdtQVNlVXQxc2VWNUh4UkhQRVBMREhCanIwaFlac29MTnRFTlczaFhmbU5ON3ZXRHBVMklRaENObWoyNGdmWjdNeGtHYnlWUUVxVHVOblBxOEFvTWN0QjRR?oc=5",
+          "source": "Telco Titans",
+          "published": "2026-11-19T15:48:25+00:00"
+        },
+        {
+          "title": "Guidance: BT bets on H2 cash surge - Telco Titans",
+          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPdjlyQm1CNmJ5QlNpRmpfRFFrbW5rc3RHYnItamVSN2tkUUs2anRtS0FST0JxZjBhVXQwd3F5X1AwcEw3N1JvTlg1bHZDczdNRmhyblBnUkpJZ1BuRjUwenYxUjdWSEhjc2tIS3VnbFRsOGRHVTJ2Q0NZTG9qRHNLZEViaHE3c3hrMkUw?oc=5",
+          "source": "Telco Titans",
+          "published": "2026-11-18T13:22:57+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Innisfree Group Ltd",
+      "status": "no_news",
+      "summary": "No qualifying company-specific headline was found in the saved seven-day coverage. This is a gap in the available feed, not evidence that the company had no news.",
+      "sources": []
+    },
+    {
+      "name": "InfraRed Partners LLP",
+      "status": "no_news",
+      "summary": "No qualifying company-specific headline was found in the saved seven-day coverage. This is a gap in the available feed, not evidence that the company had no news.",
+      "sources": []
+    },
+    {
+      "name": "Fujitsu Ltd",
+      "status": "covered",
+      "summary": "Fujitsu expanded its Google Cloud partnership across AI and cybersecurity. UK coverage separately highlights more than £600m of government business since its promised bidding pause and risks around an ageing police system.",
+      "sources": [
+        {
+          "title": "Fujitsu expands Google Cloud partnership to advance AI use By Investing.com - Investing.com India",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOU2RibjFQVlBzV1ZkQXZuZ2l1b2xlbTBsVmlCSkFKem0wZEF6V1VSVDhQWEQtbVBvelhrdlc3dk5ocDc0LTVjSHlCZTdzakttVFRFdlczOVprOWdQMVhlLWZEMi1ncHZmT2hEeFdaMk9IWEhFMk9yV2tXQjlFcnhtanJmZEtlNlBOdlNGN2xreEllNlA2aHIxVjJzQS0zUUNsRlYtTkZqc2ZEQTljUDFrZlZWZXR4Wm1WdWQ4?oc=5",
+          "source": "Investing.com India",
+          "published": "2026-11-19T04:03:39+00:00"
+        },
+        {
+          "title": "Fujitsu’s UK government business exceeds £600m since promised bidding pause - Computer Weekly",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOQUNtUjBvNk1WVlJVaEE5RWNDMDQxYUxpdXZSNzdFM3p6WFF5Y2ZOX0ZvdG5peDNNVzlOUnlGZk0tdzNzRjdZVnltd1VGZlJybmtuSU5GUDdVTWdkTTc1aUFpZzA0N0gyTmRiNWUxMUREOXRtNHZDZUN1c050akx1eFVCRzZMMkVFS29keFRYNWVabzhiQ09TeU5GVU1UMUZxNkxSckxsX1RBWC05QWdJcHVTekNKNWg1dWJj?oc=5",
+          "source": "Computer Weekly",
+          "published": "2026-11-18T13:54:38+00:00"
+        },
+        {
+          "title": "'Critical' 1970s-era Fujitsu UK police system could remain unsupported for three years - The Register",
+          "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPcE44QTVBMEtDLWlNNFczSEVNcldzT2wyQktvSmk5Q0ZaWkd1Znh6bWRlTkxRQVd4NHI2VENJam9YMTdtRmtRZnRNRENMNEpKd1ZWbGRGVlhPMjMzYmZpTVFEX2RZR3JFY1R0R0tuWUNrQnRUT1hEckxwT3h6SWlWYld1WV9zSW43aWw5emI3YU1ld3hDS1Zsc1FRMTlTZHlYSEFDeDdnRDdZMmZFZXV1MkxBaGgyb2lKU2VsbE9fTXRtYWhVRkZwcEF6SzQzb0d5czZ4VlNVR3NyQkUyVHc?oc=5",
+          "source": "The Register",
+          "published": "2026-11-20T15:12:00+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Project Ardent Topco Ltd",
+      "status": "no_news",
+      "summary": "No qualifying company-specific headline was found in the saved seven-day coverage. This is a gap in the available feed, not evidence that the company had no news.",
+      "sources": []
+    },
+    {
+      "name": "VINCI",
+      "status": "covered",
+      "summary": "Vinci won approximately €400m of work on a 225,000-cubic-metre LNG storage tank in Canada. The reports describe one construction award, rather than several separate wins.",
+      "sources": [
+        {
+          "title": "VINCI Construction Wins Around €400 Million Contract for LNG Tank in Canada - energynews.pro",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQNXI5Q2dYaWRZY0ZReU4xXzRWWkZ5dTNhWDUtYzlCUzNycktYWVpmR3FhenFNUEpXS3N3U1R0LXRwQXdoOGxXbXA3ZUp6NmpPcGtoVTFWUnZMV2cwdXcxLWNMTi1IVkdzYXZjNVJydnEzZ0hnZ25VMDF0NTFPLWpHMTFIVU1rNkszNWh3YnhONHRkZ3ZBRml2Tm0waFNwbk9kYlE?oc=5",
+          "source": "energynews.pro",
+          "published": "2026-11-20T14:33:15+00:00"
+        },
+        {
+          "title": "Vinci wins contract to build 225,000 cbm LNG tank for LNG Canada Phase 2 - Oil & Gas Middle East",
+          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5IeFVyRWV3bW1uVUFfazAtakpPM013QkZBXy1MRk9BWDAtWVpFcDl3cEZaVTRTUC1lVjhJbnlBX1NnSlVVUGlBdWFnN0xkVTFUcmxuYXNfVERBaDB2UG44TXRUcGtwbmFJVVgzaHlyRQ?oc=5",
+          "source": "Oil & Gas Middle East",
+          "published": "2026-11-20T11:23:09+00:00"
+        }
+      ]
+    },
+    {
+      "name": "DXC Technology Company",
+      "status": "covered",
+      "summary": "DXC partnered with Cisco to integrate agentic AI tools. Separate coverage describes a 5.9% share-price decline amid sector selling; the headlines do not show that the partnership caused the move.",
+      "sources": [
+        {
+          "title": "DXC Technology Forms Partnership With Cisco to Integrate Agentic AI Tools - marketscreener.com",
+          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOM0cxM3dUX18xZzU1emo0Z2pWWFFWWm1hRWhZZWlxUXgxYVBnRVRCWWkxOGFjMHg2MTRkeFhuSmVpbDZIb3hkVGEtSGJneEliYUtmWjFWUTBMR2JCZWxEcUNMc3hyR0lYYnN0MWlDZ3pCZ2RLM0pmck1JOUJuSGJzamVtdUVMUzZMYkNtRHhhaFQya21fRzRQYkcxS3VzajdhakR2U3ZwZ3ZCTEVkX2lGV2c1cGxwVXVDSkJtby1odVhvMlNG?oc=5",
+          "source": "marketscreener.com",
+          "published": "2026-11-19T14:39:26+00:00"
+        },
+        {
+          "title": "DXC Technology Drops 5.9% Amid Sector-Wide Selling - AlphaStreet",
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOSEhrNkdDVFFqY2pIV1B1XzhUeTJIZWxTb2VEY25MZEt0ZFlPNEZ4WmRvcVNOVi1wd0VjS0U4eHpJNWwyOElYazdzbHJVQTBsd2IzV3VaaVNXRzZkZTZ5TFpxM1ppb00zb181cUJveUV1V0RaaF9LZGxRbUZIVFRqUDJ4akY2UdIBiwFBVV95cUxPMjZCTVh5R1hCc2dPTDFzYmVFVkNEYzUtQkpDOFpDS0JOVFBScVBldm9KUmlFa3puLVo1NXRIWUhNenFGSVJQVXkxc25sOHh2ZXdqbEJhcTkxZlJKU21Uc0htVnFHNjR5dWd2V19KUU1lNUJjQ2FTeXVsTkFtMFFQZXlKdFRCUURkQS1J?oc=5",
+          "source": "AlphaStreet",
+          "published": "2026-11-19T22:33:56+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Equitix Jupiter Bidco Ltd",
+      "status": "no_news",
+      "summary": "No qualifying company-specific headline was found in the saved seven-day coverage. This is a gap in the available feed, not evidence that the company had no news.",
+      "sources": []
+    },
+    {
+      "name": "Terra Firma Holdings Ltd",
+      "status": "no_news",
+      "summary": "No qualifying company-specific headline was found in the saved seven-day coverage. This is a gap in the available feed, not evidence that the company had no news.",
+      "sources": []
+    },
+    {
+      "name": "Boxxe Group Ltd",
+      "status": "no_news",
+      "summary": "No qualifying company-specific headline was found in the saved seven-day coverage. This is a gap in the available feed, not evidence that the company had no news.",
+      "sources": []
+    },
+    {
+      "name": "Moneta Topco Ltd",
+      "status": "no_news",
+      "summary": "No qualifying company-specific headline was found in the saved seven-day coverage. This is a gap in the available feed, not evidence that the company had no news.",
+      "sources": []
+    },
+    {
+      "name": "Compass Group PLC",
+      "status": "covered",
+      "summary": "Compass is reported to be planning a move of its primary stock-market listing from London to New York. This is a reported plan, rather than confirmation that the listing has moved.",
+      "sources": [
+        {
+          "title": "Compass Group plans to move its primary stock listing from London to New York - Quartz",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBOQUw5ajg0THJ3a2YyMzMxU1d2a08tTGtBZi1jM1ZabEhTbGNIcm1xRG1QM1NGa0FIQi05Y1Y0T3ozSnFhSGZRU3AyQzRrVkNPbjhiWUl2aTdzNnFCYmpSal95RXhJSG5XeG8zbzF5X2Q5b0ozeFE?oc=5",
+          "source": "Quartz",
+          "published": "2026-11-23T12:55:53+00:00"
+        },
+        {
+          "title": "Catering giant Compass to quit London stock market for New York in bruising blow to Burnham's Britain - This is Money",
+          "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQSTZZYXNCWlN3clR4Z0pTWFFUTHhHQ3NDWjE2bmhlaTl0R0RiNWo1b1lTYmdSc1dHd2Y2alAwVzRhZWlmeDVRZE4tUWRlUEVoWVczSXhUaFJGYmJMajNzNjJiTlJjSnA3ZFpaWTlDN3lvU1d2R3plSGRzRXNSUV81ZHJCM09iV2pSaEtKZXAxeTRPemllVUVWWWo3YTRUUVFrVUk0YUtBMEhvNUJpVXRQSXdsZ0dLS0xhWTVJSTgybUJseU9zdWNoVXk3VWo3Zk8wLU11OTc2N0h4R01kbXNoeG5HYW16S2Fk0gHuAUFVX3lxTE45OHdUbHZpc2pHYnV3UUcwZzBKbWRzYTg5S21hUlpSTW9NTTBkZk9sNXgzTjZESjQwUnNpT3pWbzYtbHZDSTR2VUVqUkNuV3VWLWwzNUFTVmlBNVVlZFJzZ2E2LTNhY1g4dDE5WC1oZ09Ua3p4TVlTVUlyZk5xdjB1dUNSU0VSaVpkc3FLUGpKR2N1ZlNxeTZ5Zi1uVS16cnlkWDNjTHZ2OVVtSmUtQmV3ZzR0VGdER1V5M2FnZzlrRXpiTVY4ZE14VmdSX2Q5QkVyYmVsNGxvLVpFUWtra05HRkxSblNzZHF2dVAyZHc?oc=5",
+          "source": "This is Money",
+          "published": "2026-11-23T12:00:42+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Amentum Holdings Inc.",
+      "status": "covered",
+      "summary": "Amentum received $38.3m in aviation awards and positions on two major contract vehicles. Other coverage previews forthcoming earnings, so expectations should be kept separate from reported results.",
+      "sources": [
+        {
+          "title": "Amentum Receives $38.3 Million In Aviation Awards And Positions On Two Major Contract Vehicles - Pulse 2.0",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOcUtUTXFOR2VLRXdERTNSbUs3dkpXSm5MeHhfbmZUTThIVUdKRzd4NkFSNnl5d2NyU29ZWkp0MGh5VWQ5RUpzcUV2YW8teUJSUk1hQWxSREpEci1TX0VQWUdFWGx5NXJuZGM1VXY2UE4tUlJXa2ZLUGE5Y29CWFV6N083eVhnZmNxdXJzeXowaHFMa202eU9EOGJEQmtubGlzMC1sYTE2ZTk5bkdTMU5xbnM5TQ?oc=5",
+          "source": "Pulse 2.0",
+          "published": "2026-11-21T21:23:59+00:00"
+        },
+        {
+          "title": "Amentum earnings loom ahead as EPS forecast signals decline By Investing.com - Investing.com Canada",
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPMWhSenVEQjRKQzltSEtEYTBnbGlWelNhSkc4UkhmVGR5R2dSb1BPQ3F2WmdLd0J2M3YwOENsZ0xuV1BFeDRRd3g1VDU4MDczR192TTIzVzdvRnZRczVpU2VSVG94V1h4d0t1T2NON2ItN0JzcUpLRjlEY1hfWUZtXzVheXpXdGtuYkRicVdXQlhjMmViQXZQMzZ2Nmt0U2JaQS14U21OdlVfMTVqbTRaMlNQR3Faa3BKMlc1Zg?oc=5",
+          "source": "Investing.com Canada",
+          "published": "2026-11-20T14:42:21+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Rheinmetall AG",
+      "status": "covered",
+      "summary": "Rheinmetall and the Netherlands are seeking closer cooperation. Separate coverage reports Bernstein’s scepticism about the business beyond 2030; that longer-term broker view is an assessment rather than an established outcome.",
+      "sources": [
+        {
+          "title": "Rheinmetall and the Netherlands want to strengthen their cooperation, but stock continues to fall - marketscreener.com",
+          "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxQTGl6RDBmQTQ3d2FnUUJZUE1oSzlHSC00SHFKMUZkdVByejRWWmg3YnJZSEVZODBDbTRfXzNtenJ1QUJhN0pLYXVqT1FYcHdQcmNsbG8zX0VMQjBCUFB5VnprNEhaZ2hfZ2xIRGh3Yl9LcnJMTklIRVY0eEd4REt2NHN3d2V1dWtmYkk4ejdQQWY2RS04Vk9MVUZoLUlVQ3A1VDlaRm9MRGV1WDVtMWJGR3BURFExTVVKRmZWbzJNbmlGZUFhVE5YU3dycTNqNmtuQ0dKRlBUcEFQel8wdk5mOE9MR0JoRzhfUVVFV3ZZQVFUWjZYUnMzS2JNRl9jeTZPZ0hBNlB5UQ?oc=5",
+          "source": "marketscreener.com",
+          "published": "2026-11-19T14:21:25+00:00"
+        },
+        {
+          "title": "Rheinmetall at yearly low - Bernstein highly skeptical from 2030 onward - marketscreener.com",
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQck5HaFd5U0c0ZWZqalJlcGRBV2NpZlNabmd4R2VSSkJOa0FEZHB1Ym9Rek9iWmE4eFdKcG1wb3c5V18xR2o5Z0s2bjNjLURQWXNKNS1MTk1DT21FaUh4S25zaGVvek9mZ3Z2Yi1qeVVHUm4yTlhHb3dzaTF5T2NWRmhrbV8wVzVaSFhoQzBjTzZiYUg3MXRxaWIwTzNLZjVNTjI1NXRWX045SF9tOEhLbEdVYWRmbW1hemZQb0VRWQ?oc=5",
+          "source": "marketscreener.com",
+          "published": "2026-11-19T10:19:21+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Sierra Nevada Corporation",
+      "status": "covered",
+      "summary": "UA.NEWS, citing The War Zone, reports a $124m US Air Force contract with Sierra Nevada. The saved headline does not identify enough programme detail to expand on the award.",
+      "sources": [
+        {
+          "title": "US Air Force signs $124 million contract with Sierra Nevada — The War Zone - UA.NEWS",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNV25uSUZyT0RadVJqZUFXNE92Q1FfaU5CcmM2eUFuZk9BeXlWWU9mLVFiaXZ2VEhSWXg0bEdiTlFQWk03RWxKWW45LTVycGl4RFBzMTBLLW9YYUd1U2J2VjhDT3B5a0JMa0RIVGVxSWtDUzQ0eXBtbnJoMnhHTVR0NmhYZHM5cE55S3d6RUxUR3JuZXVJU3Q4NEJpNzNfcGlQT2Q5U2xTQm83Zk5XS2pB?oc=5",
+          "source": "UA.NEWS",
+          "published": "2026-11-18T19:00:11+00:00"
+        }
+      ]
+    },
+    {
+      "name": "RTX Corporation",
+      "status": "covered",
+      "summary": "RTX selected Ursa Major and Avio USA for Tomahawk rocket-motor work. Separate coverage reports the start of an Indian propeller maintenance, repair and overhaul facility.",
+      "sources": [
+        {
+          "title": "Exclusive: RTX taps Ursa and Avio to develop Tomahawk motors - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNbGlFcGtyelhnTXpBQ0V4NGJ2VGhyTnVvSlhMQ3ZZWVN4d0puVXpiWUFodFh0TzMtRkphcGNBMkRRTENpWi1Jd2o0X19CZl84R0dwaHhyZkRvMUNqOFhVTHNHYWh0NkVsQ25jaFAwYkdHMlYtYmVnU1RnLWZmaWFlaVhkRThsWmp3TldkZWNvX3VZRW8?oc=5",
+          "source": "Yahoo Finance",
+          "published": "2026-11-18T17:00:04+00:00"
+        },
+        {
+          "title": "RTX (RTX) Starts Building India Propeller MRO Facility - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNbGVGWS1xc0VxbGpsRlc1N2ZrQkFoWmRjdnd6Tmx4MWZzejY4anU3UG9tdjhyR1l4WlVQTW85YWdrRzI4T29oWDVFckhsYmdFRkFhMUR2SWtkU1E0aTNtVzhabHBFVUlhYzB6Y05Pa2JqendnM2J6eURfQWFsVWpMRERoSUNxOS00RjNVUGlGaFlwNExvNmpoamtn?oc=5",
+          "source": "Yahoo Finance",
+          "published": "2026-11-19T20:11:34+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Sopra Steria Group",
+      "status": "covered",
+      "summary": "Sopra Steria and Scaleway announced a partnership to migrate critical applications to a European sovereign cloud. Multiple saved headlines describe the same agreement.",
+      "sources": [
+        {
+          "title": "Sopra Steria and Scaleway Announce Strategic Partnership to Support the Migration of Critical Applications to the Sovereign Cloud - www.marketscreener.com",
+          "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQY0F4Y2YyOThmaVUtQjNzNUFDcllVR09CNElnU1VfRlRvcW1IbE9BYk5jR3dlN2dqOFhmQURtR3pKMlNXNE96RVVLVVVrckFoU2wzM0EwYzJfNkpQS0JGak5PTjQ4T296bXJGVVlrOUFEd1NCcW9iQnJFWjdBZTVsY0tjdVNJUTJ6eWpRU1d6Z1FCWGRITnlLLWdCWWdmSnQ3REpFa2l4MVgzZHlQS1lVbjRYbmh0THFteEEzR3BZSWVVMkZSNUt6bWliRFE5dEFsUmN2TTM0ZllvcWFuckM2VUl6YUtsbkRx?oc=5",
+          "source": "www.marketscreener.com",
+          "published": "2026-11-19T16:07:59+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Tokenhouse Ltd",
+      "status": "no_news",
+      "summary": "No qualifying company-specific headline was found in the saved seven-day coverage. This is a gap in the available feed, not evidence that the company had no news.",
+      "sources": []
+    },
+    {
+      "name": "Tennessee Topco Ltd",
+      "status": "no_news",
+      "summary": "No qualifying company-specific headline was found in the saved seven-day coverage. This is a gap in the available feed, not evidence that the company had no news.",
+      "sources": []
+    },
+    {
+      "name": "Davitt Jones Bould Ltd",
+      "status": "no_news",
+      "summary": "No qualifying company-specific headline was found in the saved seven-day coverage. This is a gap in the available feed, not evidence that the company had no news.",
+      "sources": []
+    },
+    {
+      "name": "CBRE Group Inc.",
+      "status": "covered",
+      "summary": "CBRE arranged the $45.6m sale of a newly built, 97-unit residential property in West New York, New Jersey. The headline identifies a brokerage transaction, rather than revenue or profit earned by CBRE.",
+      "sources": [
+        {
+          "title": "CBRE Arranges $45.6M Sale of Newly Constructed 97-Unit Luxury Multifamily Property in West New York New Jersey - Yield PRO",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE54aW5HYW9MYmpWUzNBT3E0LXk5WUh4dGE5RWZrUGhfbjV1NDRpWkJWV0V4Y3dlUlRLT3kyYTQxU251Znl1NkZNT0tGNGxPcF9scXNQOTNVcVU?oc=5",
+          "source": "Yield PRO",
+          "published": "2026-11-19T19:04:04+00:00"
+        }
+      ]
+    },
+    {
+      "name": "TEKEVER Holdings S.A.",
+      "status": "no_news",
+      "summary": "No qualifying company-specific headline was found in the saved seven-day coverage. This is a gap in the available feed, not evidence that the company had no news.",
+      "sources": []
+    },
+    {
+      "name": "Cohort PLC",
+      "status": "no_news",
+      "summary": "No qualifying company-specific headline was found in the saved seven-day coverage. This is a gap in the available feed, not evidence that the company had no news.",
+      "sources": []
+    },
+    {
+      "name": "Mears Group PLC",
+      "status": "no_news",
+      "summary": "No qualifying company-specific headline was found in the saved seven-day coverage. This is a gap in the available feed, not evidence that the company had no news.",
+      "sources": []
+    },
+    {
+      "name": "Saab AB",
+      "status": "covered",
+      "summary": "Saab and Dezamet signed a licensing agreement for MAPAM mortar-ammunition production in Poland. The headline does not specify contract value or production volumes.",
+      "sources": [
+        {
+          "title": "Dezamet and Saab sign licensing agreement for MAPAM mortar ammunition production in Poland - MILMAG",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOTFR3c2JUS0NnVXRQUjFSYXdRQmwxY3dNSzBBYnM1c3haXy05dFRCYUo5dkcwRVI3SXJSWnE4bDZrVjNNb0c1LXNPUDFJVVFNWkRMN25kd1VYcWc2WjNNbzhWeExTNTg0Y01yNG5wXzNxeW54VmlPY0ZyY05rQnY2aVJKYTN5dGNKeXdWQ0o3dHd1LVhWWGJ4dkRzdXctOVV0dHM3alJnZ1dIMFpKWlVvR3Z3?oc=5",
+          "source": "MILMAG",
+          "published": "2026-11-20T22:36:23+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Skanska AB",
+      "status": "covered",
+      "summary": "Skanska added $80m to an existing US technology-facility construction contract. It also won a €44m housing contract in Warsaw, adding a separate European project to the week’s coverage.",
+      "sources": [
+        {
+          "title": "Skanska signs additional contract for the construction of a tech facility in USA for USD 80M, about SEK 760M - TradingView",
+          "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNY3I4dE9DQzQ1NVRrczZmSldFVmltMWs0cGg0T2pteVhZODFib1gta0Z3QzczNTdkZno2dDlUbGdZWkEyTThjR1M3Z1YyUGk2SWNIMjJZM3lKZkRQXzZaVU0wdU9oOUdjTHFQbFlnb25vWDNhckFOemtOZ0FpMmJsd0VKNHRyNjJyNlliWUU4ei1GT3l2SkQxQ0FDVFpSY0tUNWIxb2VlYTVxU0hKd2RoZmR3b3JoSGNsWEZFRzFVa3Q3Q0ZpUnBUeHZILUNoc1lGZFdpc1V3SFVob0tGRGo4eS1UelJublJPRzNqdVJnMXJMVHhsZEJQcEVXM04?oc=5",
+          "source": "TradingView",
+          "published": "2026-11-18T06:43:00+00:00"
+        },
+        {
+          "title": "Skanska Wins EUR 44 Mln Warsaw Housing Contract - TradingView",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOM0pwSm9GQXdua3hDWDQ4RHpOUzZWaFJ4WS1lUlVjemJwRVhtRExNdV81QUZEMXJBZGJtbzNnOFJmZnlmZXZvblBfUElpZjJCSVRCNEZBd3Z0OG1VajNrcHktMnZnNmJxYThEekQyc3pNYnZfcThyM3JkQ19rTHJTUk9KVkNvRXpVNkZ1LWVnWlV2UXJRNnVhcVcwMDdRMS0zLTVqbnBWdWN3UmczTXZhSGR2c29GRkRG?oc=5",
+          "source": "TradingView",
+          "published": "2026-11-17T07:19:00+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Chemring Group PLC",
+      "status": "covered",
+      "summary": "Seeking Alpha reports that activist investor Palliser Capital is pushing for a Chemring breakup. The headline describes an investor campaign, rather than an agreed restructuring or disposal.",
+      "sources": [
+        {
+          "title": "Chemring gains on report activist fund Palliser Capital pushing for breakup - Seeking Alpha",
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQRVFDWVRubkpHWld2aWMxblpSdlI2R0pwSzMwc0t4RU13bHVObWpLNktYU1VTSW9qRV9nazl5RnVtTXlTdkVyWHpKRXVqRGRVVDNlb0p2aEV5Ym5WVHl1Y08wczZHb3pNOGo1b0IzSFZ0R1NsRDNpek54WUhTcUFfV0VNWnd5U252SWRNdmFFd2FfbWxqMnZmY2NBTXkyRTJ2NnpUdUpiZmpQbzl6eGhhbjZ4RnU?oc=5",
+          "source": "Seeking Alpha",
+          "published": "2026-11-18T17:09:53+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Vitol Netherlands Coöperatief U.A.",
+      "status": "no_news",
+      "summary": "No qualifying company-specific headline was found in the saved seven-day coverage. This is a gap in the available feed, not evidence that the company had no news.",
+      "sources": []
+    },
+    {
+      "name": "CGI Inc",
+      "status": "covered",
+      "summary": "MarketWatch reported that CGI shares fell on Thursday and underperformed the market. The saved headline gives market context but does not identify a company-specific catalyst.",
+      "sources": [
+        {
+          "title": "CGI Inc. Cl A stock falls Thursday, underperforms market - MarketWatch",
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQWVFROVlVckxMSmNmQlFQUnRxV0pJckRGYVQ5MEptRHdVT19SaTVGREQ5MkRXQ0oxdmRiRkJHNXMwc1pTQnp0NEtzZUJYZVQzZ29aS1dZdy0tczFyV29xMHFlVExVUFJ5bDFNajNwY1hvSGdnUkl3TWNKaVF1b0dQZHZXbGo5WGRkY1VQRzZYbW1WVEtseGpRZXhObHlaUGpac2dCNVhXN1NNeWp3MlNnMTZReVU?oc=5",
+          "source": "MarketWatch",
+          "published": "2026-11-19T21:32:00+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Capgemini",
+      "status": "covered",
+      "summary": "AlphaValue/Baader Europe upgraded Capgemini to Buy. Separately, Capgemini’s technology outlook highlights agentic AI among its 2027 themes; that outlook is commentary rather than a contract award or earnings result.",
+      "sources": [
+        {
+          "title": "AlphaValue/Baader Europe Upgrades Capgemini to Buy Rating - www.marketscreener.com",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOYms4S1gzRFlKY012eGhnSHhMb3N5STItVnV3Nk9kVTNVenFvMUFyNnpYS3lqTmpaOURVT01keXVmbjRSNU1JZjc5MWtSclc1VXlsQTNYb0dQQ3AxeVFVM0plMWU3eXQ0LXZnLUdSQjAtMnFtOGwxd1lxTEc0NmZ0SUFRZTdWaVB4aVJ4eTBuWlljRU9mVmtoVTV0T253MU9mRjV5cE9SVUgydFNCZ3NJ?oc=5",
+          "source": "www.marketscreener.com",
+          "published": "2026-11-20T13:38:27+00:00"
+        },
+        {
+          "title": "Capgemini Identifies Top 5 Tech Trends Driving Agentic AI in 2027 - Mexico Business News",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQcWV5cXhsWjJjRlhEcFEySXBHRWlpLTc1X1l0WExCZ2JjWFZCVFZRck1kRHpackh4cXI4SmdveWJKZjFISWdvTEo5YkdCWVVHZ3BuZEZtal9EanExWlNaZEl3RDFXZENWUVZkNVo1R1VET0t2LTdMTE5GUzJZZklSbFZGVEpKZmFvbFNNYWlmTE9YYnBJMTVkQnhDVTd6ZzR6ZWN3RkZXVkRPTUph?oc=5",
+          "source": "Mexico Business News",
+          "published": "2026-11-19T19:02:23+00:00"
+        }
+      ]
+    },
+    {
+      "name": "TotalEnergies SE",
+      "status": "covered",
+      "summary": "TotalEnergies announced a stronger partnership with Continental Resources to develop US gas production. The saved headline identifies the partnership’s direction but does not quantify its effect on future earnings.",
+      "sources": [
+        {
+          "title": "United States: TotalEnergies Strengthens its Partnership with Continental Resources to Develop its Gas Production - Quantisnow",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOanBxNG9SUTZ3M3pTMmJESEo2V2hydktZQ0xLOGI0cVR4RVl5UTlXTU1IMWVtVHluNGljNVpzS0xXOERfOUxlRFlJX2ZnTzJrSWpKUFg3WEVQRnRUZ203dzdMRXkybmNqZE9tZHlVcUxjY2lJcFNYb21pSkE4SDFSazUwUzBoQ2hVVk9TazRnVXB6eHlLdWNjNzVhTHNtSXAwR1hGNTVsb25qZ2I1SGhuWHBEME1waFJLSXRuUnNnWHhLdw?oc=5",
+          "source": "Quantisnow",
+          "published": "2026-11-23T07:16:15+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Koninklijke VolkerWessels B.V.",
+      "status": "no_news",
+      "summary": "No qualifying company-specific headline was found in the saved seven-day coverage. This is a gap in the available feed, not evidence that the company had no news.",
+      "sources": []
+    }
+  ]
+}

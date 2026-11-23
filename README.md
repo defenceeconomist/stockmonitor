@@ -4,10 +4,12 @@ A static **Quarto + Python** website connecting MOD supplier spending to share-p
 
 **[Live website](https://defenceeconomist.github.io/stockmonitor/)**
 
+- **Top-50 workspace:** the 50 largest suppliers by published MOD payments, with the selected company’s price chart and news beside the treemap. Includes 34 quoted and 16 unquoted suppliers in the current source; all 78 remain searchable in the full directory.
 - Interactive treemap: area represents 2024/25 MOD payments; colour represents adjusted share-price performance over a selected window.
 - Company price explorer: 1W, 1M, 3M, 6M, YTD, 1Y and 5Y, closing/adjusted prices or rebased to 100.
 - Company news: up to 30 recent headlines per quoted company, markers on the daily chart, and a paired session's adjusted close-to-close change. This is a timing association, **not causal attribution**.
-- **Latest-week explanations for all 78 companies**: fixed seven-day window, weekly adjusted return, largest daily move, reported catalysts or clearly labelled news context, and up to three supporting reports. Companies without a direct quote or sufficient evidence are explicitly flagged.
+- **Codex news desk:** concise, source-linked summaries for the top 50, covering the latest seven days including news after the last completed session. Search by supplier or switch between firms with news and all 50. Private firms receive news searches too.
+- **Latest-week price context**: fixed seven-day window, weekly adjusted return, largest daily move, reported catalysts or clearly labelled news context, and up to three supporting reports. Companies without a direct quote or sufficient evidence are explicitly flagged.
 - Searchable supplier directory and complete source/methodology notes.
 - Responsive layout with keyboard-accessible company selection and directory.
 
@@ -17,7 +19,7 @@ The fixed spending universe comes from **Table 4a** of [MOD trade, industry and 
 
 The 50 explicitly mapped direct stock listings are in `data/listings.csv`. Other rows remain visible without a quote. We deliberately do not substitute prices of portfolio companies or parents for unmatched entities such as IBM International C.V. and Turner & Townsend Partners LLP. Mappings need manual review after corporate actions or listing changes; provider company names are retained in the snapshot to support that review.
 
-Prices come from the Yahoo Finance chart endpoint (five years of completed daily sessions); headlines come from company-name Google News RSS searches limited to 90 days. No API key or browser-side financial API is required. These unofficial public endpoints can be rate limited or change without notice. Review provider terms and data redistribution permissions before commercial use. Only headline metadata/links are stored, never article bodies.
+Prices come from the Yahoo Finance chart endpoint (five years of completed daily sessions); headlines come from company-name Google News RSS searches limited to 90 days, including the unquoted suppliers in the top 50. No API key or browser-side financial API is required. These unofficial public endpoints can be rate limited or change without notice. Review provider terms and data redistribution permissions before commercial use. Only headline metadata/links are stored, never article bodies.
 
 Prices retain native listing currencies (GBp = pence); there is no FX conversion. Performance uses adjusted closes. This is not a calculated investment total return or an investment recommendation. Price/news fetch failures retain the prior successful cache with an explicit stale status. If fewer than 80% of mapped companies return fresh price data, the refresh fails without replacing the snapshot.
 
@@ -31,7 +33,7 @@ Publication timestamps are converted to the listing's exchange timezone. Before 
 
 The updater fetches a dedicated date-bounded news feed per quoted company, separately from the capped 90-day feed. Evidence must have a mapped session in the measured window and a publication timestamp after the baseline session's normal close and at/before the final close. Stories after the final close cannot explain that week's return. The summaries use company-name checks, quote-page/speculative-content filters, headline theme rules, source ranking and headline deduplication. They do not read article bodies or call an AI API. A directional, explicitly event-linked headline can support a **reported catalyst**; other concrete stories supply **news context**, not causal findings. Every supporting headline links to its source. Missing coverage yields “No clear explanation found”. All unquoted entities also receive an explicit no-quote briefing. Source matching can be imperfect, and no market/sector return attribution is performed.
 
-Briefings are available in the all-company weekly overview and alongside the selected company's chart. They regenerate on every data refresh and are stored in the snapshot; older weekly prose is not reused when the window advances. Failed weekly-news requests fall back to the general news feed with a visible coverage caveat. Add or adjust rules with their edge-case tests as new patterns appear.
+Weekly price context is available in a collapsed top-50 overview and alongside the selected company’s chart. They regenerate on every data refresh and are stored in the snapshot; older weekly prose is not reused when the window advances. Failed weekly-news requests fall back to the general news feed with a visible coverage caveat. Add or adjust rules with their edge-case tests as new patterns appear.
 
 ## Run locally
 
@@ -69,15 +71,21 @@ For a local update, review `quarto preview`, the update report, and `git diff --
 
 The Quarto pre-render step runs `scripts/build.py` to copy the snapshot into the website assets. Plotly.js is vendored locally in `assets/plotly.min.js` (v3.4.0, MIT, see its header); no chart CDN is required.
 
-## GitHub Pages and weekly refresh
+## Codex updates and GitHub Pages
 
-`.github/workflows/publish.yml` runs on pushes to `main`, manual dispatch, and **Saturdays at 08:00 UTC** (08:00 UK winter / 09:00 UK summer). GitHub schedules may run late or be disabled after prolonged repository inactivity. Scheduled runs and manual dispatch refresh data using the same command as local updates. Code pushes verify and build the checked-in snapshot without downloading market data. A manual dispatch also offers **Build saved data without downloading prices or news** for a cached rebuild.
+Market/news updates and editorial summarisation are intended to run in a scheduled Codex task. No task is created by changing this repository. Use [prompts/codex-update.md](prompts/codex-update.md) as the scheduled prompt, with this repository as its project. A weekly Saturday morning run follows the previous cadence; choose the timing in Codex. For local-file tasks the computer needs to be on with the app running; see the [official scheduled-task documentation](https://learn.chatgpt.com/docs/automations).
 
-To request a fresh update now, open the repository's **Actions → Refresh and publish → Run workflow**, select `main`, leave the cached option unchecked and run it. The workflow saves the verified snapshot back to `main`, uploads `_site`, and deploys through the official GitHub Pages actions. Bot snapshot commits use `[skip ci]` to avoid a second build. The `update-report` artifact is uploaded on successful and failed runs when a report is available. Runs are serialized and limited to 45 minutes.
+The task first runs the verified data refresh, reads `python3 scripts/news_briefing.py --prepare`, writes its own concise editorial prose to `data/news-briefing.json`, validates it with `python3 scripts/news_briefing.py`, and rebuilds with `python3 scripts/update_monitor.py --cached`. The saved prompt includes the exact JSON contract and evidence rules. It leaves changes locally for review unless you explicitly authorize publishing in the task instructions. No extra AI API key is needed: Codex writes the summaries during its task.
 
-Repository Settings → Pages → Source must be **GitHub Actions**. No secrets are required beyond the automatically supplied `GITHUB_TOKEN`; the workflow requests content write and Pages deployment permissions. A failed refresh/build leaves the previous deployed website intact. Individual stale series/news are flagged on the site.
+The briefing contains every top-50 supplier exactly once, with either a sourced summary or an explicit coverage gap. Its seven-day news window ends at the snapshot timestamp, independently of the completed-session weekly return. Headline matching, noise filtering and source filtering prepare the evidence; Codex chooses and summarises the material developments. Only headline metadata is used, and each cited object must exactly match the current evidence. A validator rejects missing/duplicate suppliers, unknown citations and incorrect date windows. Codex’s prose still needs editorial judgment; structural validation cannot establish every claim’s accuracy.
 
-If an update fails, inspect the failed workflow step and download its report. Retry transient provider failures; fewer than 80% successful price fetches blocks the snapshot. Fix data or test failures before retrying. A cached dispatch can publish code fixes using the previous snapshot. If a local process was forcibly stopped, confirm it is no longer running before removing `.update-lock` and retrying. Abrupt termination can leave `.update-*` temporary folders, which can be removed once no update is running. The rollback handles ordinary errors; forced termination during final file replacement may require restoring the snapshot from Git and rebuilding with `--cached`.
+The briefing records the exact snapshot it summarises. When data advances without a replacement briefing, the build omits old prose and shows an awaiting-update state. Deterministic weekly price context remains available separately. Cached rebuilds preserve a valid Codex briefing. A malformed briefing for the current snapshot fails the build.
+
+`.github/workflows/publish.yml` only runs on pushes to `main` and manual dispatch. It always verifies and builds saved data, then deploys through GitHub Pages. It has **no refresh schedule, provider downloads or snapshot-writing bot commits**. Repository Settings → Pages → Source must be **GitHub Actions**. No additional deployment secrets are required.
+
+After reviewing a Codex update, commit both `data/snapshot.json` and `data/news-briefing.json` together and push to `main` to publish. Check `data/update-report.json` for provider warnings. Failed checks prevent local output promotion or deployment; the previous successful website stays available. A local refresh alone does not publish the site.
+
+If a local process was forcibly stopped, confirm no update is running before removing `.update-lock` and retrying. Interrupted `.update-*` directories can then be removed. The updater rolls back ordinary errors; forced termination during final file replacement may require restoring the snapshot from Git and rebuilding with `--cached`.
 
 ## Files
 
@@ -86,10 +94,14 @@ If an update fails, inspect the failed workflow step and download its report. Re
 | `index.qmd`, `_quarto.yml` | Quarto site and content |
 | `scripts/update_data.py` | Source parsing, price/news downloads and session pairing |
 | `scripts/update_monitor.py` | Full update process: candidate, checks, render, report and rollback |
-| `scripts/build.py` | Network-free static build preparation |
+| `scripts/build.py` | Network-free static build preparation and dated briefing validation |
+| `scripts/news_briefing.py` | Compact top-50 evidence and Codex briefing validation |
+| `data/news-briefing.json` | Codex-written editorial summaries and supporting headlines |
+| `prompts/codex-update.md` | Ready-to-use instructions for a scheduled Codex update |
 | `data/listings.csv` | Explicit MOD holding-company to direct listing mapping |
 | `data/snapshot.json` | Auditable latest successful cached dataset |
 | `assets/app.js`, `assets/styles.css` | Interactive charts and responsive design |
+| `tests/test_news_briefing.py` | Top-50 scope, date windows, citation integrity and missing-evidence checks |
 | `tests/test_pipeline.py` | Threshold, source, session-pairing and snapshot checks |
 | `tests/test_update_monitor.py` | Failed-update preservation, output promotion and overlapping-run checks |
 

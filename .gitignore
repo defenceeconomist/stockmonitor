@@ -11,3 +11,5 @@ __pycache__/
 /.update-lock/
 /.update-*/
 /data/update-report.json
+
+/assets/news-briefing.json

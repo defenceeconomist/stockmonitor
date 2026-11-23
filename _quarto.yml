@@ -1,5 +1,7 @@
 project:
   type: website
+  render:
+    - index.qmd
   output-dir: _site
   pre-render: python3 scripts/build.py
   resources:

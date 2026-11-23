@@ -13,3 +13,10 @@ assert.equal(scope.windowBars(company,'1M')[0].date,'2026-10-19');
 assert.ok(Math.abs(scope.performance(company,'1M')-10)<1e-9);
 assert.equal(scope.performance({market:{bars:[]}},'1M'),null);
 console.log('7 calendar-window and adjusted-performance checks passed.');
+
+const ranked=scope.topCompanies(Array.from({length:78},(_,i)=>({name:`Supplier ${i}`,spend_m:i})));
+assert.equal(ranked.length,50);
+assert.equal(ranked[0].spend_m,77);
+assert.equal(ranked.at(-1).spend_m,28);
+assert.equal(scope.topCompanies([{name:'B',spend_m:1},{name:'A',spend_m:1}])[0].name,'A');
+console.log('4 top-50 ranking and boundary checks passed.');
