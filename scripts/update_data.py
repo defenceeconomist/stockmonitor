@@ -14,6 +14,7 @@ import zipfile
 from zoneinfo import ZoneInfo
 import requests
 from weekly_summary import add_weekly_summaries
+from portfolio_data import refresh as refresh_portfolio
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_URL = 'https://assets.publishing.service.gov.uk/media/69aff1f1d620c14fa183ef3e/Data_tables_relating_to_MOD_trade__industry_and_contracts_2025.ods'
@@ -64,14 +65,16 @@ def parse_table(blob):
     return result, notes
 
 
-def fetch_market(ticker):
+def fetch_market(ticker, instrument='EQUITY'):
     url = f'https://query1.finance.yahoo.com/v8/finance/chart/{quote(ticker)}?range=5y&interval=1d'
     chart = get(url).json()['chart']
     if chart.get('error') or not chart.get('result'):
         raise ValueError(str(chart.get('error')))
     result = chart['result'][0]
     meta = result['meta']
-    if meta.get('instrumentType') != 'EQUITY' or meta.get('symbol', '').upper() != ticker.upper():
+    # Yahoo canonicalises USDGBP=X to GBP=X; both denote GBP per US dollar.
+    symbols = {ticker.upper(), 'GBP=X'} if ticker == 'USDGBP=X' else {ticker.upper()}
+    if meta.get('instrumentType') != instrument or meta.get('symbol', '').upper() not in symbols:
         raise ValueError('Unexpected instrument identity')
     tz = ZoneInfo(meta['exchangeTimezoneName'])
     regular = meta.get('currentTradingPeriod', {}).get('regular', {})
@@ -218,6 +221,8 @@ def main():
                'spending_period': '2024/25', 'source_revision': '12 March 2026',
                'threshold_m': 50, 'companies': enriched, 'notes': notes, 'warnings': errors}
     add_weekly_summaries(payload)
+    refresh_portfolio(payload, previous, fetch_market)
+    payload['warnings'].extend('Portfolio ' + warning for warning in payload['portfolio_market']['warnings'])
     temporary = path.with_suffix('.tmp')
     temporary.write_text(json.dumps(payload, ensure_ascii=False, separators=(',', ':')))
     temporary.replace(path)

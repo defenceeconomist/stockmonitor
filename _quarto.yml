@@ -27,4 +27,6 @@ format:
     include-after-body:
       text: |
         <script src="assets/plotly.min.js"></script>
+        <script src="assets/portfolio.js"></script>
+        <script src="assets/portfolio-ui.js"></script>
         <script src="assets/app.js"></script>

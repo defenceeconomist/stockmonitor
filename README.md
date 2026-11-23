@@ -5,6 +5,7 @@ A static **Quarto + Python** website connecting MOD supplier spending to share-p
 **[Live website](https://defenceeconomist.github.io/stockmonitor/)**
 
 - **Top-50 workspace:** the 50 largest suppliers by published MOD payments, with the selected company’s price chart and news beside the treemap. Includes 34 quoted and 16 unquoted suppliers in the current source; all 78 remain searchable in the full directory.
+- **Portfolio versus market:** spending/equal-weight buy-and-hold baskets in GBP, global/UK accumulating tracker proxies, exact company and FX contributions, breadth, concentration, and Codex news for the leading contributors.
 - Interactive treemap: area represents 2024/25 MOD payments; colour represents adjusted share-price performance over a selected window.
 - Company price explorer: 1W, 1M, 3M, 6M, YTD, 1Y and 5Y, closing/adjusted prices or rebased to 100.
 - Company news: up to 30 recent headlines per quoted company, markers on the daily chart, and a paired session's adjusted close-to-close change. This is a timing association, **not causal attribution**.
@@ -21,7 +22,30 @@ The 50 explicitly mapped direct stock listings are in `data/listings.csv`. Other
 
 Prices come from the Yahoo Finance chart endpoint (five years of completed daily sessions); headlines come from company-name Google News RSS searches limited to 90 days, including the unquoted suppliers in the top 50. No API key or browser-side financial API is required. These unofficial public endpoints can be rate limited or change without notice. Review provider terms and data redistribution permissions before commercial use. Only headline metadata/links are stored, never article bodies.
 
-Prices retain native listing currencies (GBp = pence); there is no FX conversion. Performance uses adjusted closes. This is not a calculated investment total return or an investment recommendation. Price/news fetch failures retain the prior successful cache with an explicit stale status. If fewer than 80% of mapped companies return fresh price data, the refresh fails without replacing the snapshot.
+Company charts and treemap returns retain native listing currencies (GBp = pence). The portfolio panel separately translates returns to GBP using daily exchange rates. Performance uses adjusted closes. This is not a calculated investment total return or an investment recommendation. Price/news fetch failures retain the prior successful cache with an explicit stale status. If fewer than 80% of mapped companies return fresh price data, the refresh fails without replacing the snapshot.
+
+### Portfolio comparison and contribution accounting
+
+The portfolio covers the **34 directly quoted companies within today’s top 50**. The 16 unquoted suppliers are excluded, not assigned a zero return. Their exclusion and the quoted firms’ share of top-50 spending are disclosed. Every quoted member must have usable history: a missing price, required FX rate or selected benchmark blocks the panel instead of silently dropping a company. This is the performance of today’s supplier basket, not an investable historical selection strategy or the user’s actual holdings. The fixed 2024/25 spending baseline and current membership introduce hindsight into earlier historical windows.
+
+Default starting weights are each quoted supplier’s MOD payments divided by all quoted top-50 payments; equal weights allocate 1/34 each. Weights reset at the baseline of each selected period. The holdings then drift with buy-and-hold performance; there is no daily or monthly rebalance. The comparison chart includes both weighting choices on the same window. It offers 1W, 1M, 3M, 6M, YTD, 1Y and all common history. The newest listing limits common history; there is no invented pre-listing price series.
+
+Two **accumulating ETF proxies**, downloaded through the existing Yahoo endpoint, provide broad market comparisons:
+
+| Comparison | Saved symbol | Provider and index |
+| --- | --- | --- |
+| Global, default | `VWRP.L` | [Vanguard FTSE All-World UCITS ETF (Acc)](https://www.vanguard.co.uk/professional/product/etf/equity/9679/ftse-all-world-ucits-etf-accumulating-Vanguard), tracking FTSE All-World |
+| UK | `FTAL.L` | [State Street SPDR FTSE UK All Share UCITS ETF (Acc)](https://www.ssga.com/uk/en_gb/institutional/etfs/state-street-spdr-ftse-uk-all-share-ucits-etf-acc-spyf-gy), tracking FTSE All-Share |
+
+Both use GBP-listed prices. These are fund-price proxies, not licensed index total-return histories: fund fees, tracking differences and premiums/discounts can affect them. Accumulated income is already reflected in the fund; do not add dividends again. Supplier performance uses provider-adjusted closes, which approximate the effect of reported splits and dividends. This is an adjusted-return comparison, not a tax-specific audited investment return; supplier trading costs and personal taxes are excluded.
+
+`portfolio_market` in the snapshot stores both proxies and **GBP per unit** of CAD, EUR, JPY, SEK and USD, with individual fetch timestamps and status. `USDGBP=X` is explicitly allowed to canonicalise to Yahoo’s `GBP=X`; other symbol or instrument mismatches are rejected. GBP uses a rate of 1 and GBp a rate of 0.01. No missing FX value is assumed to equal 1. Failed downloads retain dated caches with stale warnings. Cached builds require no network.
+
+Valuations follow the selected London-listed tracker’s daily calendar. The common end is the minimum latest date across all quoted companies, required FX series and that benchmark, capped at the supplier snapshot date. The baseline is the last common-calendar date on/before the requested start, limited by the latest first observation among the required series. Local holidays use the most recent observation on/before each valuation date, at most seven calendar days old, with no future observations. Quotes across time zones are daily closing observations, not synchronised intraday marks. The panel displays exact dates and warns about stale sources or shortened history.
+
+For initial weight `w`, local adjusted-price ratio `L`, and GBP-per-unit FX ratio `F`, a company’s GBP return is `L × F − 1`. Its contribution is `100 × w × (L × F − 1)` percentage points. Local shares contribute `100 × w × (L − 1)` and currency contributes `100 × w × L × (F − 1)`. The interaction belongs to FX, so local plus FX reconciles exactly to the company and basket returns. Company contributions reconcile to the endpoint of the selected curve. Benchmark excess is the arithmetic difference between basket and proxy returns in percentage points, not a causal market attribution.
+
+The bar chart groups the five largest positive and five largest negative contributors plus all remaining firms; the expandable table lists every member. Breadth uses company GBP returns. The top-five contribution share uses absolute contributions as its denominator, avoiding misleading concentration figures when positive and negative effects cancel. Leading contributor cards reuse the current Codex briefing and source links, with its separate news window displayed. They do not claim that recent stories explain a longer selected return period.
 
 ### News session pairing
 
@@ -59,7 +83,7 @@ To refresh the monitor, run this one command from the repository root with your 
 python3 scripts/update_monitor.py
 ```
 
-It downloads prices, recent headlines and weekly evidence into a temporary candidate, regenerates weekly explanations, runs the Python and chart checks against that candidate, and renders a temporary website. Only after every step succeeds does it replace `data/snapshot.json` and `_site`. The rendered dashboard must match the candidate. A failed download/check/build retains the previous saved snapshot and website. A local lock prevents overlapping runs.
+It downloads prices, benchmark proxies, FX, recent headlines and weekly evidence into a temporary candidate, regenerates weekly explanations, runs the Python and chart checks against that candidate, and renders a temporary website. Only after every step succeeds does it replace `data/snapshot.json` and `_site`. The rendered dashboard must match the candidate. A failed download/check/build retains the previous saved snapshot and website. A local lock prevents overlapping runs.
 
 Use `python3 scripts/update_monitor.py --cached` to verify and rebuild the saved data without network downloads. This is also the build path for code pushes. `scripts/update_data.py` remains available as a lower-level fetch command, but does not provide the full check/build process.
 
@@ -95,6 +119,9 @@ If a local process was forcibly stopped, confirm no update is running before rem
 | `scripts/update_data.py` | Source parsing, price/news downloads and session pairing |
 | `scripts/update_monitor.py` | Full update process: candidate, checks, render, report and rollback |
 | `scripts/build.py` | Network-free static build preparation and dated briefing validation |
+| `scripts/portfolio_data.py` | Dated benchmark and GBP-per-unit FX downloads, with stale-cache fallback |
+| `assets/portfolio.js`, `assets/portfolio-ui.js` | Portfolio arithmetic, exact contribution accounting and comparison views |
+| `tests/test_portfolio.cjs`, `tests/test_portfolio_data.py` | Accounting identities, coverage, calendars, instrument identity and FX direction |
 | `scripts/news_briefing.py` | Compact top-50 evidence and Codex briefing validation |
 | `data/news-briefing.json` | Codex-written editorial summaries and supporting headlines |
 | `prompts/codex-update.md` | Ready-to-use instructions for a scheduled Codex update |

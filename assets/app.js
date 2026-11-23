@@ -194,6 +194,7 @@ async function init(){
    document.querySelectorAll('[data-period]').forEach(b=>b.addEventListener('click',()=>{chartPeriod=b.dataset.period;highlighted=null;updateHorizons();renderCompany();}));
    $('briefing-search').addEventListener('input',renderBriefing);
    for(const [id,covered] of [['covered-news',true],['all-news',false]])$(id).addEventListener('click',()=>{coveredOnly=covered;for(const key of ['covered-news','all-news']){const active=key===(covered?'covered-news':'all-news');$(key).classList.toggle('active',active);$(key).setAttribute('aria-pressed',String(active));}renderBriefing();});
+   initPortfolio();
    renderBriefing();
    $('weekly-search').addEventListener('input',renderWeeklyOverview);renderWeeklyOverview();
    $('chart-mode').addEventListener('change',renderChart);$('supplier-search').addEventListener('input',renderTable);
